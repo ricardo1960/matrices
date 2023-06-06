@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<exercises xml:id="ex_matrices" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <!-- You can ommit the title and just get the default "Exercises" -->
+	
+	
+	<exercise>
+		<statement>
+			<p>
+				Dadas las matrices
+			</p>
+			<me>
+				A=\begin{pmatrix}
+				1 \amp 2 \\ -1 \amp 3 
+				\end{pmatrix}
+				\qquad 
+				B=\begin{pmatrix}
+				-3 \amp 2 \\ 1 \amp -1 
+				\end{pmatrix}
+			</me> 
+			<p>
+				calcular:
+			</p>
+			<p>
+				<ol>
+					<li>
+						<p>
+							<m>
+								2A+3B
+							</m>
+						</p>
+					</li>
+					<li>
+						<p>
+							<m>
+								3A-2B
+							</m>
+						</p>
+					</li>
+					<li>
+						<p>
+							<m>
+								-A+2B
+							</m>
+						</p>
+					</li>
+					<li>
+						<p>
+							<m>
+								-2A-B
+							</m>
+						</p>
+					</li>
+				</ol>
+			</p>
+		</statement>
+		<answer>
+			<p>
+				<ol>
+					<li>
+						<p>
+							<m>
+								2 \begin{pmatrix}
+								1 \amp 2 \\ -1 \amp 3 
+								\end{pmatrix} + 3 \begin{pmatrix}
+								-3 \amp 2 \\ 1 \amp -1 
+								\end{pmatrix}= \begin{pmatrix}
+								2 \amp 4 \\ -2 \amp 6 
+								\end{pmatrix}+\begin{pmatrix}
+								-9 \amp 6 \\ 3 \amp -3 
+								\end{pmatrix}= \begin{pmatrix}
+								-7 \amp 10 \\ 1 \amp 3 
+								\end{pmatrix}
+							</m>
+						</p>
+					</li>
+					<li>
+						<p>
+							<m>
+								3 \begin{pmatrix}
+								1 \amp 2 \\ -1 \amp 3 
+								\end{pmatrix} - 2 \begin{pmatrix}
+								-3 \amp 2 \\ 1 \amp -1 
+								\end{pmatrix}= \begin{pmatrix}
+								3 \amp 6 \\ -3 \amp 9 
+								\end{pmatrix}-\begin{pmatrix}
+								-6 \amp 4 \\ 2 \amp -2 
+								\end{pmatrix}= \begin{pmatrix}
+								9 \amp 2 \\ -5 \amp 11 
+								\end{pmatrix}
+							</m>
+						</p>
+					</li>
+					<li>
+						<p>
+							<m>
+								-\begin{pmatrix}
+								1 \amp 2 \\ -1 \amp 3 
+								\end{pmatrix} + 2 \begin{pmatrix}
+								-3 \amp 2 \\ 1 \amp -1 
+								\end{pmatrix}= \begin{pmatrix}
+								-1 \amp -2 \\ 1 \amp -3 
+								\end{pmatrix}+\begin{pmatrix}
+								-6 \amp 4 \\ 2 \amp -2 
+								\end{pmatrix}= \begin{pmatrix}
+								-7 \amp 2 \\ 3 \amp -5 
+								\end{pmatrix}
+							</m>
+						</p>
+					</li>
+					<li>
+						<p>
+							<m>
+								-2 \begin{pmatrix}
+								1 \amp 2 \\ -1 \amp 3 
+								\end{pmatrix} + 3 \begin{pmatrix}
+								-3 \amp 2 \\ 1 \amp -1 
+								\end{pmatrix}= \begin{pmatrix}
+								-2 \amp -4 \\ 2 \amp -6 
+								\end{pmatrix}+\begin{pmatrix}
+								-9 \amp 6 \\ 3 \amp -3 
+								\end{pmatrix}= \begin{pmatrix}
+								-11 \amp 2 \\ 5 \amp -9 
+								\end{pmatrix}
+							</m>
+						</p>
+					</li>
+				</ol>
+			</p>
+		</answer>
+	</exercise>
+
+	<exercise>
+		<p>
+			Sean A y B la matrices dadas por:
+		</p>
+		<me>
+			A=\begin{pmatrix}
+			0 \amp 1 \amp 1 \\
+			1 \amp 1 \amp 0 \\
+			1 \amp 0 \amp 0
+			\end{pmatrix}
+			\qquad
+			B=\begin{pmatrix}
+			6 \amp -3 \amp -4 \\
+			-3 \amp 2 \amp 1 \\
+			-4 \amp 1 \amp 5
+			\end{pmatrix}
+		</me>
+		<p>
+			Contestar razonadamente a la siguiente pregunta. ¿Existe algún valor de <m>\lambda \in \R</m> tal que la igualdad <m>(A-\lambda I)^2=B</m> sea cierta?. En caso afirmativo hallar dicho valor de <m>\lambda</m>. 
+		</p>
+		<p>
+			<m>I</m> es la matriz identidad de orden 3.
+		</p>
+		<answer>
+			<p>
+				<m>a=2</m>
+			</p>
+		</answer>
+	</exercise>
+
+	<exercise>
+		<p>
+			Sean <m>A</m> y <m>M</m> las matrices:
+		</p>
+		<me> 
+			A=\begin{pmatrix}
+			3 \amp 2 \\
+			1 \amp 3
+			\end{pmatrix}
+			\qquad
+			M=\begin{pmatrix}
+			m \amp n \\
+			p \amp q
+			\end{pmatrix}
+		</me>
+		<p>
+			Encontrar las condiciones que deben cumplir <m>m</m>, <m>n</m>, <m>p</m> y <m>q</m> para que se verifique que el producto de ambas matrices efectuado en las dos formas posibles sea el mismo.
+		</p>
+		<answer>
+			<p>
+				<m>m=q</m>, <m>n=2p</m>
+			</p>
+		</answer>
+	</exercise>
+
+	<exercise>
+		<p>
+			Dadas las matrices
+		</p>
+		<me> 
+			A=\begin{pmatrix}
+			5 \amp 2 \amp 0 \\
+			2 \amp 5 \amp 0 \\
+			0 \amp 0 \amp 1
+			\end{pmatrix}
+			\qquad
+			B=\begin{pmatrix}
+			a \amp b \amp 0 \\
+			c \amp c \amp 0 \\
+			0 \amp 0 \amp 1
+			\end{pmatrix}
+		</me>
+		<p>
+			se pide:
+		</p>
+		<p>
+			<ol>
+				<li>
+					<p>
+						Encontrar las condiciones que deben cumplir <m>a</m>, <m>b</m> y <m>c</m> para que se verifique <m>A\cdot B = B \cdot A</m>.
+					</p>
+				</li>
+				<li>
+					<p>
+						Para <m>a=b=c=1</m>, calcular <m>B^{10}</m>.
+					</p>
+				</li>
+			</ol>
+		</p>
+		<answer>
+			<p>
+				<ol>
+					<li>
+						<p>
+							<m>a=b=c</m>
+						</p>
+					</li>
+					<li>
+						<p>
+						<m>B^{10}=\begin{pmatrix}
+								512 \amp 512 \amp 0 \\
+								512 \amp 512 \amp 0 \\
+								0 \amp 0 \amp 1
+								\end{pmatrix}
+							</m>
+						</p>
+					</li>
+				</ol>
+			</p>
+</answer>
+</exercise>
+
+</exercises>

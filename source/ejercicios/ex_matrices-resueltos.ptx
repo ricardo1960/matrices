@@ -1,0 +1,977 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<exercises xml:id="ex_matrices-resueltos" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <!-- You can ommit the title and just get the default "Exercises" -->
+
+  <exercise>
+    <statement>
+      <p>
+        Dadas  las matrices 
+        <me>
+          A=\begin{pmatrix}
+            2 \amp 1 \\
+            1 \amp  2 \\
+            0 \amp 1
+            \end{pmatrix} 
+          \qquad
+          B=\begin{pmatrix}
+            2 \amp 0 \amp 1 \\
+            3 \amp 2 \amp -1 \\
+            1 \amp 1 \amp 1
+            \end{pmatrix}
+          \qquad
+          C=\begin{pmatrix}
+            3 \amp 2 \amp 1 \\
+            -2 \amp -1 \amp 0
+          \end{pmatrix}
+          \qquad
+          D=\begin{pmatrix}
+            5 \amp 1 \\
+            1 \amp 3
+          \end{pmatrix} 
+        </me>
+      </p>
+      <p>
+        Indicar todos los posibles productos entre ellas y calcular el elemento (2,1) de cada producto.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Solo se pueden realizar aquellos productos donde el número de columnas de la primera matriz coincide con el número de filas de la segunda. Con esta condición los productos posibles son:
+      </p>
+      <me>
+        A \cdot C \qquad A \cdot D \qquad B \cdot A \qquad C \cdot A \qquad D \cdot C 
+      </me>
+      <p>
+        Los elementos (2,1) de cada uno de estos productos los calculamos multiplicado la fila 2 de la primera matriz por la columna 1 de la segunda matriz.
+      </p>
+      <me>(A \cdot C)_{21}= \begin{pmatrix}
+        1 \amp 2 
+        \end{pmatrix} \cdot \begin{pmatrix}
+        3 \\ -2  
+        \end{pmatrix}= -1
+      </me>
+      <me>
+        (A \cdot D)_{21}= \begin{pmatrix}
+        1 \amp 2 
+        \end{pmatrix} \cdot \begin{pmatrix}
+        5 \\ 1  
+        \end{pmatrix}= 7
+      </me>
+      <me>
+        (B \cdot A)_{21}= \begin{pmatrix}
+        3 \amp 2 \amp -1 
+        \end{pmatrix}\cdot \begin{pmatrix}
+        2 \\ 1 \\ 0   
+        \end{pmatrix}= 8
+      </me>
+      <me>
+        (C \cdot A)_{21}= \begin{pmatrix}
+        -2 \amp -1 \amp 0 
+        \end{pmatrix}\cdot \begin{pmatrix}
+        2 \\ 1 \\ 0 
+        \end{pmatrix}= -5
+      </me>
+      <me>
+        (D \cdot C)_{21}= \begin{pmatrix}
+        1 \amp 3 
+        \end{pmatrix}\cdot \begin{pmatrix}
+        3 \\ -2  
+        \end{pmatrix}= -3
+      </me>
+    </solution>
+  </exercise>
+	
+  <exercise>
+    <statement>
+      <p>
+        Dadas las matrices: 
+      </p>
+      <me>A=\begin{pmatrix}
+          a \amp 2 \\
+          1 \amp b
+          \end{pmatrix}
+          \qquad 
+          B=\begin{pmatrix}
+          1 \amp 1 \\
+          1 \amp 2
+          \end{pmatrix}
+          \qquad
+          C=\begin{pmatrix}
+          -1 \\
+          1 
+          \end{pmatrix} 
+        </me>
+        <p>
+           hallar:
+        </p>
+        <p>
+          <ol>
+            <li>
+              <p>
+                Las matrices <m>B \cdot A \cdot C</m> y <m>A^t \cdot C</m> (donde <m>A^t</m> es la traspuesta de <m>A</m>).
+              </p>
+            </li>
+            <li>
+              <p>
+                Los valores que deben tener <m>a</m> y <m>b</m> para que se cumpla <m>B \cdot A \cdot C = A^t \cdot C</m> .
+              </p>
+            </li>
+          </ol>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <ol>
+          <li>
+            <md>
+              <mrow>
+                B \cdot A \cdot C \amp = \begin{pmatrix}
+              1 \amp 1 \\
+              1 \amp 2
+              \end{pmatrix} \cdot 
+              \begin{pmatrix}
+              a \amp 2 \\
+              1 \amp b
+              \end{pmatrix} \cdot \begin{pmatrix}
+              -1 \\
+              1 
+              \end{pmatrix}
+              </mrow>
+              <mrow>
+                \amp = \begin{pmatrix}
+              a+1 \amp 2+b \\
+              a+2 \amp 2+2b
+              \end{pmatrix} \cdot 
+              \begin{pmatrix}
+              -1 \\
+              1 
+              \end{pmatrix}
+              </mrow>
+              <mrow>
+                \amp = \begin{pmatrix}
+              -a+b+1 \\
+              -a+2b 
+              \end{pmatrix}
+              </mrow>
+            </md>
+            <md>
+              <mrow>
+                A^t \cdot C \amp = \begin{pmatrix}
+              a \amp 1 \\
+              2 \amp b
+              \end{pmatrix} \cdot \begin{pmatrix}
+              -1 \\
+              1 
+              \end{pmatrix}
+              </mrow>
+              <mrow>
+                \amp = \begin{pmatrix}
+              -a+1 \\
+              -2+b 
+              \end{pmatrix}
+              </mrow>
+            </md>
+          </li>
+          <li>
+            <me>
+              B \cdot A \cdot C = A^t \cdot C
+            </me>
+            <me>
+              \begin{pmatrix}
+              -a+b+1 \\
+              -a+2b 
+              \end{pmatrix} = \begin{pmatrix}
+              -a+1 \\
+              -2+b 
+              \end{pmatrix}
+            </me>
+            <me>
+              \begin{cases} -a+b+1=-a+1 \\ -a+2b = -2+b \end{cases}  \Rightarrow \begin{cases} a= 2 \\ b= 0 \end{cases}
+            </me>
+          </li>
+        </ol>
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        Dada la matriz <m>M=\begin{pmatrix} 2 \amp 5 \\ 2 \amp -1 \end{pmatrix}</m>, calcular los valores de <m>a</m> y <m>b</m> para los cuales se verifica la igualdad <m>M^2 +a \cdot M+ b \cdot I =0</m>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Planteamos la igualdad y operamos hasta llegar a una sola matriz en cada lado de la igualdad.
+      </p>
+      <me>
+        M^2 +a \cdot M+ b \cdot I =0
+      </me>
+      <me>
+        \begin{pmatrix}
+        2 \amp 5 \\ 2 \amp -1
+        \end{pmatrix}\begin{pmatrix}
+        2 \amp 5 \\ 2 \amp -1
+        \end{pmatrix}+a\begin{pmatrix}
+        2 \amp 5 \\ 2 \amp -1
+        \end{pmatrix}+
+        b\begin{pmatrix}
+        1 \amp 0 \\ 0 \amp 1
+        \end{pmatrix}=\begin{pmatrix}
+        0 \amp 0 \\ 0 \amp 0
+        \end{pmatrix}
+      </me>
+      <me>
+        \begin{pmatrix}
+        14 \amp 5 \\ 2 \amp 11
+        \end{pmatrix}+\begin{pmatrix}
+        2a \amp 5a \\ 2a \amp -a
+        \end{pmatrix}+
+        \begin{pmatrix}
+        b \amp 0 \\ 0 \amp b
+        \end{pmatrix}=\begin{pmatrix}
+        0 \amp 0 \\ 0 \amp 0
+        \end{pmatrix}
+      </me>
+      <me>
+        \begin{pmatrix}
+        14+2a+b \amp 5+5a \\ 2+2a \amp 11-a+b
+        \end{pmatrix}=\begin{pmatrix}
+        0 \amp 0 \\ 0 \amp 0
+        \end{pmatrix}
+      </me>
+      <p>
+        Igualamos las matrices y llegamos al siguiente sistema de ecuaciones:
+      </p>
+      <me>
+        \begin{cases} 14+2a+b=0 \\ 5+5a= 0 \\ 2+2a=0 \\ 11-a+b=0 \end{cases} \Rightarrow \begin{cases} a= -1 \\ b= -12 \end{cases}
+      </me>
+    </solution>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        Dadas las matrices 
+      </p>
+      <me>A=\begin{pmatrix}
+          1 \amp 3 \\ 3 \amp 1
+          \end{pmatrix} \qquad B=\begin{pmatrix}
+          1 \amp 5 \\ a \amp b
+          \end{pmatrix}
+        </me>
+        <p>
+          encontrar los valores de los parámetros <m>a</m> y <m>b</m> para que las matrices conmuten.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Para que las matrices conmuten se tiene que cumplir que <m>A\cdot B = B \cdot A</m>.
+      </p>
+      <me>
+        \begin{pmatrix}
+        1 \amp 3 \\ 3 \amp 1
+        \end{pmatrix} \cdot \begin{pmatrix}
+        1 \amp 5 \\ a \amp b
+        \end{pmatrix} =\begin{pmatrix}
+        1 \amp 5 \\ a \amp b
+        \end{pmatrix} \cdot \begin{pmatrix}
+        1 \amp 3 \\ 3 \amp 1
+        \end{pmatrix}
+      </me>
+      <me>
+        \begin{pmatrix}
+        1+3a \amp 5 +3b \\ 3+a \amp 15+b
+        \end{pmatrix}= \begin{pmatrix}
+        16 \amp 8 \\ a+3b \amp 3a+b
+        \end{pmatrix} 
+      </me>
+      <p>
+        Con esto llegamos al siguiente sistema de ecuaciones:
+      </p>
+      <me>
+        \begin{cases} 1+3a=16 \\ 5+3b = 8 \\ 3+a = a+3b \\ 15+b = 3a+b \end{cases}
+      </me>
+      <p>
+        La solución del sistema es: <m>a=5</m> y <m>b=1</m>.
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        Dadas las matrices
+      </p>
+      <me>
+        A=\begin{pmatrix} 1 \amp -1 \\ 2 \amp 1 \end{pmatrix} \qquad B=\begin{pmatrix} -2 \amp 0 \\ 1 \amp 2 \end{pmatrix}
+      </me>
+      <p>
+        , calcular:
+      </p>
+      <p>
+        <ol>
+          <li>
+            <p>
+              <m>\left( A+B \right)^2</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>A^2+B^2+2\cdot A \cdot B</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              ¿Son iguales los resultados anteriores?. Razonar la respuesta.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <ol>
+          <li>
+            <me>
+              A+B=\begin{pmatrix} 1 \amp -1 \\ 2 \amp 1 \end{pmatrix} +\begin{pmatrix} -2 \amp 0 \\ 1 \amp 2 \end{pmatrix}= \begin{pmatrix} -1 \amp -1  \\ 3 \amp 3 \end{pmatrix}
+            </me>
+            <me>
+              (A+B)^2=\begin{pmatrix} -1 \amp -1 \\ 3 \amp 3 \end{pmatrix}  \cdot \begin{pmatrix} -1 \amp -1 \\ 3 \amp 3 \end{pmatrix}= \begin{pmatrix} -2 \amp -2  \\ 6 \amp 6 \end{pmatrix}
+            </me>
+          </li>
+          <li>
+            <me>
+              A^2= \begin{pmatrix} 1 \amp -1 \\ 2 \amp 1 \end{pmatrix} \cdot \begin{pmatrix} 1 \amp -1 \\ 2 \amp 1 \end{pmatrix} = \begin{pmatrix} -1 \amp -2 \\ 4 \amp -1 \end{pmatrix}
+            </me>
+            <me>
+              B^2= \begin{pmatrix} -2 \amp 0 \\ 1 \amp 2 \end{pmatrix} \cdot \begin{pmatrix} -2 \amp 0 \\ 1 \amp 2 \end{pmatrix} = \begin{pmatrix} 4 \amp 0 \\ 0 \amp 4 \end{pmatrix}
+            </me>
+            <me>
+              2\cdot A \cdot B = 2 \cdot \begin{pmatrix} 1 \amp -1 \\ 2 \amp 1 \end{pmatrix} \cdot \begin{pmatrix} -2 \amp 0 \\ 1 \amp 2 \end{pmatrix}=\begin{pmatrix} -6 \amp -4 \\ -6 \amp 4 \end{pmatrix}
+            </me>
+            <me>
+              A^2+B^2+2\cdot A \cdot B = \begin{pmatrix} -1 \amp -2 \\ 4 \amp -1 \end{pmatrix}+\begin{pmatrix} 4 \amp 0 \\ 0 \amp 4 \end{pmatrix}+ \begin{pmatrix} -6 \amp -4 \\ -6 \amp 4 \end{pmatrix} = \begin{pmatrix} -3 \amp -6 \\ -2 \amp 7 \end{pmatrix}
+            </me>
+          </li>
+          <li>
+            <p>
+              No son iguales. 
+            </p>
+            <p>
+              <m>(A+B)^2 = A^2+A\cdot B + B \cdot A + B^2</m> y como el producto de matrices no es conmutativo <m>A\cdot B</m> no tiene porque ser igual a <m>B \cdot A</m>, con lo cual <m>A\cdot B + B \cdot A \neq 2 \cdot A \cdot B</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        Resolver el siguiente sistema matricial:
+      </p>
+      <me>
+        \left. \begin{array}{l} 2A+3B=\begin{pmatrix} 8 \amp 3 \\ 5 \amp 4 \end{pmatrix} \\ 3A-2B=\begin{pmatrix} -1 \amp -2 \\ 1 \amp 6 \end{pmatrix} \end{array} \right\}
+      </me>
+    </statement>
+    <solution>
+      <p>
+        Resolvemos el sistema por reducción.
+      </p>
+      <me>
+        \left. \begin{array}{l} 2 \left[ 2A+3B=\begin{pmatrix} 8 \amp 3 \\ 5 \amp 4 \end{pmatrix}\right] \\ 3 \left[3A-2B=\begin{pmatrix} -1 \amp -2 \\ 1 \amp 6 \end{pmatrix}\right] \end{array} \right\rbrace \Rightarrow \left. \begin{array}{l}  4A+6B=\begin{pmatrix} 16 \amp 6 \\ 10 \amp 8 \end{pmatrix} \\ 9A-6B=\begin{pmatrix} -3 \amp -6 \\ 3 \amp 18 \end{pmatrix} \end{array} \right\rbrace
+      </me>
+      <p>
+        Sumamos las dos ecuaciones:
+      </p>
+      <me>
+        13A= \begin{pmatrix}
+        13 \amp 0 \\ 13 \amp 26  
+        \end{pmatrix} \Rightarrow A= \begin{pmatrix}
+        1 \amp 0 \\ 1 \amp 2  
+        \end{pmatrix}
+      </me>
+      <p>
+        Ahora calculamos <m>B</m>.
+      </p>
+      <me>
+        2 \begin{pmatrix}
+        1 \amp 0 \\ 1 \amp 2  
+        \end{pmatrix} +3B =  \begin{pmatrix} 8 \amp 3 \\ 5 \amp 4 \end{pmatrix}
+      </me>
+      <me> 3B = \begin{pmatrix} 8 \amp 3 \\ 5 \amp 4 \end{pmatrix}  - \begin{pmatrix} 2 \amp 0 \\ 2 \amp 4 \end{pmatrix} = \begin{pmatrix} 6 \amp 3 \\ 3 \amp 0 \end{pmatrix}
+      </me>
+      <me>
+        B=\begin{pmatrix} 2 \amp 1 \\ 1 \amp 0 \end{pmatrix}
+      </me>
+    </solution>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        Sea <m>A</m> la matriz <m>A=\begin{pmatrix} 1 \amp a \\ 0 \amp 1 \end{pmatrix}</m>
+      </p>
+      <p>
+        Para cada número natural <m>a</m>, hallar <m>A^n</m>. Calcular <m>A^{22}-2A^2+2A</m>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Vamos a calcular las potencias de la matriz <m>A</m> y calcularemos <m>A^{n}</m>
+      </p>
+      <me>
+        A^2 = A \cdot A = \begin{pmatrix}
+        1 \amp a \\
+        0 \amp 1
+        \end{pmatrix}\cdot \begin{pmatrix}
+        1 \amp a \\
+        0 \amp 1
+        \end{pmatrix} = \begin{pmatrix}
+        1 \amp 2a \\
+        0 \amp 1
+        \end{pmatrix}
+      </me>
+      <me>
+        A^3 = A^2 \cdot A = \begin{pmatrix}
+        1 \amp 2a \\
+        0 \amp 1
+        \end{pmatrix}\cdot \begin{pmatrix}
+        1 \amp a \\
+        0 \amp 1
+        \end{pmatrix} = \begin{pmatrix}
+        1 \amp 3a \\
+        0 \amp 1
+        \end{pmatrix}
+      </me>
+      <p>
+        Por lo tanto:
+      </p>
+      <me>
+        A^{n} =   \begin{pmatrix}
+        1 \amp n \cdot a \\
+        0 \amp 1
+        \end{pmatrix}
+      </me>
+      <p>
+        Calculamos ahora la expresión pedida:
+      </p>
+      <md>
+        <mrow>
+          A^{22}-2A^2+2A \amp = \begin{pmatrix}
+          1 \amp 22a \\
+          0 \amp 1
+          \end{pmatrix} -2 \begin{pmatrix}
+          1 \amp 2a \\
+          0 \amp 1
+          \end{pmatrix}+2\begin{pmatrix}
+          1 \amp a \\
+          0 \amp 1
+          \end{pmatrix}
+        </mrow>
+        <mrow>
+          \amp = \begin{pmatrix}
+          1 \amp 20a \\
+          0 \amp 1
+          \end{pmatrix}
+        </mrow>
+      </md>
+    </solution>
+  </exercise>
+  
+
+
+
+	<exercise>
+		<statement>
+			<p>
+				Considera las matrices: <m>A= \begin{pmatrix} 1 \amp 0 \\ -2 \amp 1 \end{pmatrix} </m>, <m>B=\begin{pmatrix}  1 \amp 1 \amp a \\ 2 \amp a \amp 1 \\ 2 \amp 2 \amp 0 \end{pmatrix} </m> y <m> C=\begin{pmatrix}  1 \amp 0 \amp -2 \\ 2 \amp -1 \amp -1 \end{pmatrix} </m>
+			</p>
+      <p>
+        <ol>
+          <li>
+            <p>
+              Determina los valores de <m>a</m> para los que la matriz <m>B</m> no tiene inversa. 
+            </p>
+          </li>
+          <li>
+            <p>
+              Para <m>a = 1</m> calcula <m>X</m> tal que <m>AXB=C</m>, si es posible.
+            </p>
+          </li>
+        </ol>
+      </p>
+		</statement>
+		<solution>
+      <p>
+        <ol>
+          <li>
+            <p>
+              Una matriz tiene inversa cuando su determinante es distinto de cero. Por lo tanto, una matriz no tiene inversa cuando su determinante vale cero.
+            </p>
+			<p>
+				Hallamos el determinante de la matriz <m>B</m> y lo igualamos a cero para saber cuando no tiene inversa.
+			</p>
+			<p>
+				<me>\begin{vmatrix}  1 \amp 1 \amp a \\ 2 \amp a \amp 1 \\ 2 \amp 2 \amp 0 \end{vmatrix} = -2a^2+4a =0 \rightarrow \begin{cases} a= 0 \\ a=2 \end{cases}</me>
+			</p>
+			<p>
+				La matriz no tendrá inversa cuando <m>a=0 </m> o <m>a=2</m>
+			</p>
+          </li>
+          <li>
+            <p>
+              Para <m>a= 1</m> la matriz <m>B</m> tiene inversa.			 
+            </p>
+            <p>
+              Estudiamos si la matriz <m>A</m> tiene inversa. 
+            </p>
+            <p>
+              <me>\begin{vmatrix}A \end{vmatrix}= \begin{vmatrix} 1 \amp 0 \\ -2 \amp 1\end{vmatrix} = 1 \neq 0</me>
+              Por lo tanto, la matriz <m>A</m> también tiene inversa.
+            </p>
+            <p>
+              Luego vamos a utilizarlas para despejar <m>X</m>.
+            </p>
+            <md>
+              <mrow>
+                A \cdot X \cdot B \amp =  C
+              </mrow>
+              <mrow>
+                A^{-1} \cdot A \cdot X \cdot B \cdot B^{-1} \amp =  A^{-1} \cdot C  \cdot B^{-1} 
+              </mrow>
+              <mrow>
+                I_2 \cdot X \cdot I_3 \amp =  A^{-1} \cdot C  \cdot B^{-1} 
+              </mrow>
+              <mrow>
+                X  \amp =  A^{-1} \cdot C  \cdot B^{-1}
+              </mrow>
+            </md>
+            <p>
+              Calculamos <m>A^{-1}</m> y <m>B^{-1}</m>
+            </p>
+            <me>
+              A^{-1}=\begin{pmatrix} 1 \amp 0 \\ 2 \amp 1 \end{pmatrix} \qquad B^{-1}=\begin{pmatrix} -1 \amp 1 \amp 0 \\ 1 \amp -1 \amp \frac{1}{2} \\ 1 \amp 0 \amp -\frac{1}{2} \end{pmatrix}
+            </me>
+            <p>
+              Ahora calculamos <m>X</m>
+            </p>
+            <me>
+              X = \begin{pmatrix} 1 \amp 0 \\ 2 \amp 1 \end{pmatrix} \cdot \begin{pmatrix}  1 \amp 0 \amp -2 \\ 2 \amp -1 \amp -1 \end{pmatrix} \cdot \begin{pmatrix} -1 \amp 1 \amp 0 \\ 1 \amp -1 \amp \frac{1}{2} \\ 1 \amp 0 \amp -\frac{1}{2} \end{pmatrix} = \begin{pmatrix}  -3 \amp 1 \amp 1 \\ -10 \amp 5 \amp 2 \end{pmatrix}
+            </me>
+          </li>
+        </ol>
+      </p>
+    </solution>  
+	</exercise>
+	
+  <exercise>
+    <statement>
+      <p>
+        Sabiendo que <m>\begin{vmatrix} a \amp b \amp c \\ d \amp e \amp f \\ g \amp h \amp i \end{vmatrix}= 5</m>, calcule justificadamente <m>\begin{vmatrix} 2d \amp 2e+2f \amp 2f \\ -g \amp -h-i \amp -i \\ a \amp b+c \amp c \end{vmatrix}</m>
+      </p>
+    </statement>
+    <solution>
+      <md>
+        <mrow>
+          \begin{vmatrix}
+          2d \amp 2e+2f \amp 2f \\ -g \amp -h-i \amp -i \\ a \amp b+c \amp c
+          \end{vmatrix} \amp = \begin{vmatrix}
+          2d \amp 2e \amp 2f \\ -g \amp -h \amp -i \\ a \amp b \amp c
+          \end{vmatrix} + \begin{vmatrix}
+          2d \amp 2f \amp 2f \\ -g \amp -i \amp -i \\ a \amp c \amp c
+          \end{vmatrix} \qquad \text{(Separando  la columna 2)}
+        </mrow>
+        <mrow>
+          \amp= \begin{vmatrix}
+          2d \amp 2e \amp 2f \\ -g \amp -h \amp -i \\ a \amp b \amp c
+          \end{vmatrix} + 0 \qquad \text{(En el segundo determinante }C_2=C_3\text{)}
+        </mrow>
+        <mrow>
+          \amp= -2\begin{vmatrix}
+          d \amp e \amp f \\ g \amp h \amp i \\ a \amp b \amp c
+          \end{vmatrix}  \qquad \text{(Factor común en }F_1 \text{ y } F_2 \text{)}
+        </mrow>
+        <mrow>
+          \amp= 2\begin{vmatrix}
+          a \amp b \amp c \\ g \amp h \amp i \\ d \amp e \amp f
+          \end{vmatrix}  \qquad (F_1 \leftrightarrow F_3)
+        </mrow>
+        <mrow>
+          \amp= -2\begin{vmatrix}
+          a \amp b \amp c \\ d \amp e \amp f \\ g \amp h \amp i
+          \end{vmatrix}  \qquad (F_2 \leftrightarrow F_3)
+        </mrow>
+        <mrow>
+          \amp=-2 \cdot 5 = -10
+        </mrow>
+      </md>
+    </solution>
+  </exercise>
+
+	<exercise>
+		<statement>
+			<p>
+				Se sabe que <m>\begin{vmatrix} a \amp b \amp c \\ p \amp q \amp r \\ x \amp y \amp z \end{vmatrix}= -2 </m>
+			</p>
+      <p>
+        <ol>
+          <li>
+            <p>
+              Calcula: <m>\begin{vmatrix} a \amp c \amp b \\ 2x \amp 2z \amp 2y \\ -3p \amp -3r \amp -3q \end{vmatrix}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              Calcula: <m>\begin{vmatrix} x \amp a-3p \amp -2a \\ y \amp b-3q \amp -2b \\ z \amp c-3r \amp -2c \end{vmatrix}</m>
+            </p>
+          </li>
+        </ol>
+      </p>
+		</statement>
+		<solution>
+      <p>
+        <ol>
+          <li>
+            <md>
+              <mrow>
+                \begin{vmatrix} a \amp c \amp b \\ 2x \amp 2z \amp 2y \\ -3p \amp -3r \amp -3q \end{vmatrix} \amp = 2\cdot(-3) \begin{vmatrix} a \amp c \amp b \\ x \amp z \amp y \\ p \amp r \amp q \end{vmatrix}
+              </mrow>
+              <mrow>
+                \amp = 6 \begin{vmatrix} a \amp b \amp c \\ x \amp y \amp z \\ p \amp q \amp r \end{vmatrix}
+              </mrow>
+              <mrow>
+                \amp = - 6 \begin{vmatrix} a \amp b \amp c \\ p \amp q \amp r \\ x \amp y \amp z \end{vmatrix}
+              </mrow>
+              <mrow>
+                \amp = (-6)\cdot (-2) = 12
+              </mrow>
+            </md>
+          </li>
+          <li>
+            <p>
+              <md>
+                <mrow>
+                  \begin{vmatrix} x \amp a-3p \amp -2a \\ y \amp b-3q \amp -2b \\ z \amp c-3r \amp -2c \end{vmatrix}  \amp = \begin{vmatrix} x \amp a \amp -2a \\ y \amp b \amp -2b \\ z \amp c \amp -2c \end{vmatrix} + \begin{vmatrix} x \amp -3p \amp -2a \\ y \amp -3q \amp -2b \\ z \amp -3r \amp -2c \end{vmatrix}
+                </mrow>
+                <mrow>
+                  \amp = 0+ \begin{vmatrix} x \amp -3p \amp -2a \\ y \amp -3q \amp -2b \\ z \amp -3r \amp -2c \end{vmatrix}
+                </mrow>
+                <mrow>
+                  \amp (-3)\cdot (-2) \begin{vmatrix} x \amp p \amp a \\ y \amp q \amp b \\ z \amp r \amp c \end{vmatrix}
+                </mrow>
+                <mrow>
+                  \amp 6 \cdot \begin{vmatrix} x \amp y \amp z \\ p \amp q \amp r \\ a \amp b \amp c \end{vmatrix}
+                </mrow>
+                <mrow>
+                  \amp -6 \cdot \begin{vmatrix} a \amp b \amp c  \\ p \amp q \amp r \\ x \amp y \amp z \end{vmatrix}
+                </mrow>
+                <mrow>
+                  \amp = (-6)\cdot (-2) = 12
+                </mrow>
+              </md>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </solution>
+	</exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        Sin desarrollarlo, calcular razonadamente el valor del determinante de la matriz
+      </p>
+      <me>
+        A= \begin{pmatrix} 1 \amp a \amp b+c \\ 1 \amp b \amp a+c \\ 1 \amp c \amp a+b \end{pmatrix}
+      </me>
+    </statement>
+    <solution>
+      <me>
+        \begin{vmatrix}
+        1 \amp a \amp b+c \\ 1 \amp b \amp a+c \\ 1 \amp c \amp a+b
+        \end{vmatrix}  C_3=C_3 +C_2  \begin{vmatrix}
+        1 \amp a \amp a+b+c \\ 1 \amp b \amp a+b+c \\ 1 \amp c \amp a+b+c
+        \end{vmatrix}
+      </me>
+      <p>
+        Sacamos factor común en la tercera columna:
+      </p>
+      <me>
+        (a+b+c)\begin{vmatrix} 1 \amp a \amp 1 \\ 1 \amp b \amp 1 \\ 1 \amp c \amp 1 \end{vmatrix} =0
+      </me>
+      <p>
+        porque las columnas 1 y 3 son iguales.
+
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        Comprueba que el determinante
+      </p>
+      <me>
+        \begin{vmatrix}
+        -3 \amp 1 \amp 1 \amp 1 \\
+        1 \amp -3 \amp 1 \amp 1 \\
+        1 \amp 1 \amp -3 \amp 1 \\
+        1 \amp 1 \amp 1 \amp -3 
+        \end{vmatrix}
+      </me>
+      <p>
+        es nulo sin desarrollarlo. Explica el proceso que sigues.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        A la primera fila le sumamos las restantes:
+      </p>
+      <me>
+        \begin{vmatrix}
+        -3 \amp 1 \amp 1 \amp 1 \\
+        1 \amp -3 \amp 1 \amp 1 \\
+        1 \amp 1 \amp -3 \amp 1 \\
+        1 \amp 1 \amp 1 \amp -3 
+        \end{vmatrix} = \begin{vmatrix}
+        0 \amp 0 \amp 0 \amp 0 \\
+        1 \amp -3 \amp 1 \amp 1 \\
+        1 \amp 1 \amp -3 \amp 1 \\
+        1 \amp 1 \amp 1 \amp -3 
+        \end{vmatrix}
+      </me>
+      <p>
+        Este determinante vale <m>0</m> ya que los elementos de la primera fila son todos <m>0</m>.
+      </p>
+    </solution>
+  </exercise>
+  
+  <exercise>
+    <statement>
+      <p>
+        Calcular, sin desarrollar, el valor del siguiente determinante, enumerando las propiedades de los determinantes utilizadas:
+      </p>
+      <me>
+        \begin{vmatrix}
+        5 \amp 1 \amp 1 \amp 1 \amp 1 \\
+        5 \amp 2 \amp 1 \amp 1 \amp 1 \\
+        5 \amp 1 \amp 3 \amp 1 \amp 1 \\
+        5 \amp 1 \amp 1 \amp 4 \amp 1 \\
+        5 \amp 1 \amp 1 \amp 1 \amp 5 
+        \end{vmatrix}
+      </me>
+    </statement>
+    <solution>
+      <p>
+        Aplicamos la propiedad que dice que si a una linea de un determinante se le suma una combinación lineal de otras filas paralelas el determinante no cambia de valor.
+      </p>
+      <me>
+        \begin{vmatrix}
+        5 \amp 1 \amp 1 \amp 1 \amp 1 \\
+        5 \amp 2 \amp 1 \amp 1 \amp 1 \\
+        5 \amp 1 \amp 3 \amp 1 \amp 1 \\
+        5 \amp 1 \amp 1 \amp 4 \amp 1 \\
+        5 \amp 1 \amp 1 \amp 1 \amp 5 
+        \end{vmatrix} \begin{array}{c}
+        \\ F_2=F_2-F_1 \\ F_3=F_3-F_1 \\ F_4=F_4-F_1 \\ F_5=F_5-F_1 \\
+        \end{array} 
+        \begin{vmatrix}
+        5 \amp 1 \amp 1 \amp 1 \amp 1 \\
+        0 \amp 1 \amp 0 \amp 0 \amp 0 \\
+        0 \amp 0 \amp 2 \amp 0 \amp 0 \\
+        0 \amp 0 \amp 0 \amp 3 \amp 0 \\
+        0 \amp 0 \amp 0 \amp 0 \amp 4 
+        \end{vmatrix} = 5 \cdot 1 \cdot 2 \cdot 3 \cdot 4 = 120
+      </me>
+      <p>
+        ya que si el determinante es triangular su valor es igual al producto de su diagonal principal.
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        Determine la inversa de la matriz:<m>M=\begin{pmatrix} 1 \amp 2 \amp 3 \\ 1 \amp 1 \amp 0 \\ 1 \amp 2 \amp 0 \end{pmatrix}</m>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Calculamos la matriz inversa por el método de Gauss.
+      </p>
+      <md alignment="align" align-columns="3">
+        <mrow>
+        \left( \begin{array}{lll|lll} 1 \amp 2 \amp 3 \amp 1 \amp 0 \amp 0 \\  1 \amp 1 \amp 0 \amp 0 \amp 1 \amp 0 \\  1 \amp 2 \amp 0 \amp 0 \amp 0 \amp 1 \end{array} \right) \,\,\,\, \amp \quad
+        \begin{array}{l} F_1=F_1 \\ F_2 = F_2-F_1 \\ F_3=F_3-F_1 \end{array} \amp \Rightarrow
+        </mrow>
+        <mrow>
+          \text{ } \amp \amp
+        </mrow>
+        <mrow>
+           \left( \begin{array}{lll|lll} 1 \amp 2 \amp 3 \amp 1 \amp 0 \amp 0 \\  0 \amp -1 \amp -3 \amp -1 \amp 1 \amp 0 \\  0 \amp 0 \amp -3 \amp -1 \amp 0 \amp 1 \end{array} \right) \amp \quad \begin{array}{l} F_1=F_1+2F_2 \\ F_2=F_2 \\ F_3=F_3 \end{array} \amp \Rightarrow
+        </mrow>
+        <mrow>
+          \text{ } \amp \amp
+        </mrow>
+        <mrow>
+          \left( \begin{array}{lll|lll} 1 \amp 0 \amp -3 \amp -1 \amp 2 \amp 0 \\  0 \amp -1 \amp -3 \amp -1 \amp 1 \amp 0 \\  0 \amp 0 \amp -3 \amp -1 \amp 0 \amp 1 \end{array} \right) \amp \quad \begin{array}{l} F_1=F_1-F_3 \\ F_2=F_2-F_3 \\ F_3=F_3 \end{array} \amp \Rightarrow
+        </mrow>
+        <mrow>
+          \text{ } \amp \amp
+        </mrow>
+        <mrow>
+           \left( \begin{array}{lll|lll} 1 \amp 0 \amp 0 \amp 0 \amp 2 \amp -1 \\  0 \amp -1 \amp 0 \amp 0 \amp 1 \amp -1 \\  0 \amp 0 \amp -3 \amp -1 \amp 0 \amp 1 \end{array} \right) \amp \quad \begin{array}{l}  F_1=F_1 \\ F_2=-F_2 \\ F_3=-\sfrac{F_3}{3} \end{array} \amp \Rightarrow
+        </mrow>
+        <mrow>
+          \text{ } \amp \amp
+        </mrow>
+        <mrow>
+          \left( \begin{array}{lll|lll} 1 \amp 0 \amp 0 \amp 0 \amp 2 \amp -1 \\  0 \amp 1 \amp 0 \amp 0 \amp -1 \amp 1 \\  0 \amp 0 \amp 1 \amp -\sfrac{1}{3} \amp 0 \amp \sfrac{1}{3} \end{array} \right) \amp \amp
+        </mrow>
+        <mrow>
+          \text{ } \amp \amp
+        </mrow>
+        <mrow>
+          M^{-1}= \begin{pmatrix} 0 \amp 2 \amp -1 \\ 0 \amp -1 \amp 1 \\ -\sfrac{1}{3} \amp 0 \amp \sfrac{1}{3} \end{pmatrix} \amp \amp
+        </mrow>
+      </md>
+    </solution>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        Dada la matriz <m>A=\begin{pmatrix} 0 \amp 3 \amp 4 \\ 1 \amp -4 \amp -5 \\ -1 \amp 3 \amp 4 \end{pmatrix}</m>, comprobar que <m>A^2=-A^{-1}</m>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Calculamos <m>A^2</m>.
+      </p>
+      <me>
+        A^2 = A \cdot A = \begin{pmatrix}
+        0 \amp 3 \amp 4 \\ 1 \amp -4 \amp -5 \\ -1 \amp 3 \amp 4
+        \end{pmatrix} \cdot \begin{pmatrix}
+        0 \amp 3 \amp 4 \\ 1 \amp -4 \amp -5 \\ -1 \amp 3 \amp 4
+        \end{pmatrix} = \begin{pmatrix}
+        -1 \amp 0 \amp 1 \\ 1 \amp 4 \amp 4 \\ -1 \amp -3 \amp -3
+        \end{pmatrix} 
+      </me>
+      <p>
+        Calculamos <m>A^{-1}</m>
+      </p>
+      <me> 
+        |A| = \begin{vmatrix}
+        0 \amp 3 \amp 4 \\ 1 \amp -4 \amp -5 \\ -1 \amp 3 \amp 4
+        \end{vmatrix}= 15+12-16-12=-1 
+      </me>
+      <p>
+        Por lo tanto tiene inversa.
+      </p>
+      <p>
+        Calculamos los adjuntos de esta matriz.
+      </p>
+      <me>
+        \begin{array}{ccc}
+        A_{11} = + \begin{vmatrix} -4 \amp -5 \\ 3 \amp 4 \end{vmatrix} = -1 \amp 
+        A_{12} = - \begin{vmatrix} 1 \amp -5 \\ -1 \amp 4 \end{vmatrix} = 1 \amp 
+        A_{13} = + \begin{vmatrix} 1 \amp -4 \\ -1 \amp 3 \end{vmatrix} = -1 \\ 
+        A_{21} = - \begin{vmatrix} 3 \amp 4 \\ 3 \amp 4 \end{vmatrix} = 0 \amp 
+        A_{22} = + \begin{vmatrix} 0 \amp 4 \\ -1 \amp 4 \end{vmatrix} = 4 \amp 
+        A_{23} = - \begin{vmatrix} 0 \amp 3 \\ -1 \amp 3 \end{vmatrix} = -3 \\
+        A_{31} = + \begin{vmatrix} 3 \amp 4 \\ -4 \amp -5 \end{vmatrix} = 1 \amp 
+        A_{32} = - \begin{vmatrix} 0 \amp 4 \\ 1 \amp -5 \end{vmatrix} = 4 \amp 
+        A_{33} = + \begin{vmatrix} 0 \amp 3 \\ 1 \amp -4 \end{vmatrix} = -3 
+        \end{array}
+      </me>
+      <p>
+        Escribimos la matriz adjunta de <m>A</m> y la traspuesta de la matriz adjunta.
+      </p>
+      <me>
+        \text{adj}(A)=\begin{pmatrix}
+        -1 \amp 1 \amp -1 \\ 0 \amp 4 \amp -3 \\ -1 \amp 4 \amp -3
+        \end{pmatrix} \qquad \left[ \text{adj}(A) \right]^t =\begin{pmatrix}
+        -1 \amp 0 \amp 1 \\ 1 \amp 4 \amp 4 \\ -1 \amp -3 \amp -3
+        \end{pmatrix}
+      </me>
+      <p>
+        Ahora calculamos <m>A^{-1}</m>
+      </p>
+      <me>
+        A^{-1}=\dfrac{\left[ \text{adj}(A) \right]^t}{|A|}=  \begin{pmatrix}
+        1 \amp 0 \amp -1 \\ -1 \amp -4 \amp -4 \\ 1 \amp 3 \amp 3
+        \end{pmatrix}
+      </me>
+      <p>
+        Se comprueba que <m>A^2= A^{-1}</m>.
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        Dada la siguiente matriz:<m>A=\begin{pmatrix} 0 \amp 0 \amp 2 \\ 1 \amp 2 \amp 1 \\ 1 \amp 0 \amp 3 \end{pmatrix}</m>. Estudie el rango de la matriz <m>A-kI</m> según los valores de <m>k \in \R</m>, donde <m>I</m> es la matriz identidad de orden 3.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Primero calculamos <m>A-kI</m>.
+      </p>
+      <me> 
+        A-kI = \begin{pmatrix}
+        0 \amp 0 \amp 2 \\ 1 \amp 2 \amp 1 \\ 1 \amp 0 \amp 3
+        \end{pmatrix}-k\begin{pmatrix}
+        1 \amp 0 \amp 0 \\ 0 \amp 1 \amp 0 \\ 0 \amp 0 \amp 1
+        \end{pmatrix}= \begin{pmatrix}
+        -k \amp 0 \amp 2 \\ 1 \amp 2-k \amp 1 \\ 1 \amp 0 \amp 3-k
+        \end{pmatrix}
+      </me>
+      <p>
+        Calculamos el valor del determinante en función de <m>k</m>.
+      </p>
+      <me> 
+        \begin{vmatrix}
+        -k \amp 0 \amp 2 \\ 1 \amp 2-k \amp 1 \\ 1 \amp 0 \amp 3-k
+        \end{vmatrix}= k(2-k)(3-k)+2(2-k) = (2-k)(k^2-3k+2) 
+      </me>
+      <p>
+        Si el valor de este determinante es distinto de cero el rango de la matriz es 3, si es cero lo estudiaremos.
+      </p>
+      <me> 
+        (2-k)(k^2-3k+2)= 0 \Rightarrow \begin{cases} 2-k=0 \rightarrow k= 2 \\ k^2-3k+2=0 \rightarrow \begin{cases} k= 2 \\ k= 1 \end{cases} \end{cases} 
+      </me>
+      <p>
+        Si <m>k \in \R -\{1,2\} \rightarrow \text{rango}(A)=3 </m>
+      </p>
+      <p>
+        Estudiamos ahora los casos <m>k=1</m> y <m>k=2</m>
+      </p>
+      <me> 
+        k=1 \rightarrow A-I = \begin{pmatrix}
+        -1 \amp 0 \amp 2 \\ 1 \amp 1 \amp 1 \\ 1 \amp 0 \amp 2
+        \end{pmatrix} \Rightarrow \begin{vmatrix}
+        -1 \amp 0 \\ 1 \amp 1
+        \end{vmatrix}= -1 \neq 0 \rightarrow \text{rango}(A)=2 
+      </me>
+      <me> 
+        k=2 \rightarrow A-I = \begin{pmatrix}
+        -2 \amp 0 \amp 2 \\ 1 \amp 0 \amp 1 \\ 1 \amp 0 \amp 1
+        \end{pmatrix} \Rightarrow \begin{vmatrix}
+        -2 \amp 2 \\ 1 \amp 1
+        \end{vmatrix}= -4 \neq 0 \rightarrow \text{rango}(A)=2 
+      </me>
+      <p>
+        Resumiendo:
+      </p>
+      <me> 
+        \begin{cases} k \in \R -\{1,2\} \amp \text{rango}(A)=3 \\ k=1 \amp \text{rango}(A)=2 \\ k=2 \amp \text{rango}(A)=2 \end{cases} 
+      </me>
+    </solution>
+  </exercise>
+
+</exercises>

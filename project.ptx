@@ -25,6 +25,18 @@
       <publication>publication/publication.ptx</publication>
       <output-dir>output/print-latex</output-dir>
     </target>
+    <target name="web-ejercicios">
+      <format>html</format>
+      <source>source/ejercicios-matrices.ptx</source>
+      <publication>publication/publication.ptx</publication>
+      <output-dir>output/web/ejercicios</output-dir>
+    </target>
+    <target name="print-ejercicios" pdf-method="xelatex">
+      <format>pdf</format>
+      <source>source/ejercicios-matrices.ptx</source>
+      <publication>publication/publication.ptx</publication>
+      <output-dir>output/print/ejercicios</output-dir>
+    </target>
     <target name="subset">
       <!-- Usage: to build starting at XMLID, -->
       <!-- pretext build subset -x XMLID      -->
