@@ -19,10 +19,9 @@
 		En este tema veremos que son y para que sirven las matrices y los determinantes.
 		</p>
 	</introduction>
-    <section xml:id="ejercicios-resueltos">
-        <title>Ejercicios resueltos</title>
+    
         <xi:include href="ejercicios/ex_matrices-resueltos.ptx" />
-    </section>
+    
 <section xml:id="ejercicios">
     <title>Ejercicios</title>
 	<xi:include href="ejercicios/ex_matrices.ptx" />
