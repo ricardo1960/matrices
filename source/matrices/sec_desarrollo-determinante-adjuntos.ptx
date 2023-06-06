@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec_desarrollo-determinante-adjuntos">
+	<title>Desarrollo de un determinante por adjuntos</title>
+
+  <assemblage>
+    <title>Desarrollo de un determinante por adjuntos</title>
+    <p>
+      El determinante de una matriz cuadrada de orden <m>n</m> es igual a la suma de los productos de cada elemento de esa fila por sus adjuntos respectivos.
+    </p>
+
+    <p>
+      <me>det(A)= a_{i1}\cdot A_{i1}+a_{i2}\cdot A_{i2}+\cdots +a_{in}\cdot A_{in}</me>
+    </p>
+
+    <p>
+      <me>det(A)= a_{1j}\cdot A_{1j}+a_{2j}\cdot A_{2j}+\cdots +a_{nj}\cdot A_{nj}</me>
+    </p>
+  </assemblage>
+
+   <example>
+    <statement>
+      <p>
+        Hallar el determinante de la matriz <m>A=\begin{pmatrix} 
+        1 &amp; -2 &amp; 3 \\
+        5 &amp; 0 &amp; 6 \\
+        -1 &amp; 2 &amp; -4 \\
+        \end{pmatrix}</m>
+      </p>
+
+      <p>
+        <ol>
+          <li>
+            <p>
+              Por la regla de Sarrus.
+            </p>
+          </li>
+          <li>
+            <p>
+              Desarrollando por la primera fila.
+            </p>
+          </li>
+          <li>
+            <p>
+              Desarrollando por la segunda columna.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <solution>
+     
+		  <p> 
+        <ol>
+		      <li>
+			      <p>
+			        <me>det(A)= 0+12+30-0-12-40=-10</me>
+		        </p>
+			    </li>
+      	  <li>
+			    	<p>
+			        <me>det(A)=1 \cdot \begin{vmatrix} &amp; 0 &amp; 6 \\ &amp; 2 &amp; -4 \end{vmatrix} -(-2)\cdot \begin{vmatrix} &amp; 5 &amp; 6 \\ &amp; -1 &amp; -4  \end{vmatrix} +3 \cdot \begin{vmatrix} &amp; 5 &amp; 0 \\ &amp; -1 &amp; 2  \end{vmatrix}= -12-28+30=-10</me>
+          	</p>
+			    </li>
+      		<li>
+			    	<p>
+			        <me>det(A)=-(-2) \cdot \begin{vmatrix} &amp; 5 &amp; 6 \\ &amp; -1 &amp; -4  \end{vmatrix} +0\cdot \begin{vmatrix} &amp; 1 &amp; 3 \\ &amp; -1 &amp; -4  \end{vmatrix} -2\cdot \begin{vmatrix} &amp; 1 &amp; 3 \\ &amp; 5 &amp; 6  \end{vmatrix}= -28+0+18=-10</me>
+		        </p>
+			    </li>
+        </ol>
+      </p>
+    </solution>
+  </example>
+	<p>
+		En la practica, antes de calcular el determinante, hacemos cero el mayor número posible de elementos de una fila,utilizando las propiedades de los determinantes, y desarrollamos por los elementos de esa fila.
+	</p>
+
+  <example>
+    <statement>
+      <p>
+        Hallar el determinante de la matriz <m>A=\begin{pmatrix} 
+        2 &amp; 5 &amp; -3 &amp; -2 \\
+        -2 &amp; -3 &amp; 2 &amp; -5 \\
+        1 &amp; 3 &amp; -2 &amp; 2 \\
+        -1 &amp; -6 &amp; 4 &amp; 3 \\
+        \end{pmatrix}</m> haciendo ceros.
+		  </p>
+    </statement>
+		
+    <solution>
+    	<p>
+			  <md>
+          <mrow>
+            det(A) &amp; =\begin{vmatrix} 
+            2 &amp; 5 &amp; -3 &amp; -2 \\
+            -2 &amp; -3 &amp; 2 &amp; -5 \\
+            1 &amp; 3 &amp; -2 &amp; 2 \\
+            -1 &amp; -6 &amp; 4 &amp; 3 \\ \end{vmatrix} 
+            {\color{red}\begin{array}{l} F_1  = F_1+2F_4 \\ F_2=F_2-2F_4 \\ F_3=F_3+F_4 \end{array}}
+          </mrow>
+          <mrow>
+            &amp; =  \begin{vmatrix} 
+            0 &amp; -7 &amp; 5 &amp; 4 \\
+            0 &amp; 9 &amp; -6 &amp; -11 \\
+            0 &amp; -3 &amp; 2 &amp; 5 \\
+            -1 &amp; -6 &amp; 4 &amp; 3 \\ 
+            \end{vmatrix}  
+          </mrow>
+          <mrow>
+            &amp; =  (-1)(-1)^{4+1}\begin{vmatrix} 
+            -7 &amp; 5 &amp; 4 \\
+            9 &amp; -6 &amp; -11 \\
+            -3 &amp; 2 &amp; 5 \\ 
+            \end{vmatrix}  {\color{red}F_2=F_2+3F_3}  
+          </mrow>
+          <mrow>
+            &amp; = \begin{vmatrix} 
+            -7 &amp; 5 &amp; 4 \\
+            0 &amp; 0 &amp; 4 \\
+            -3 &amp; 2 &amp; 5 \\ 
+            \end{vmatrix}
+          </mrow>
+          <mrow>
+            &amp;  = 4\cdot (-1)^{2+3} \begin{vmatrix} 
+            -7 &amp; 5  \\
+            -3 &amp; 2  \\ 
+            \end{vmatrix} = -4(-14+15)=-4
+          </mrow>
+        </md>
+		  </p>
+    </solution>
+  </example>
+</section>

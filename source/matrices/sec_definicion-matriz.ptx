@@ -1,0 +1,681 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+<section xml:id="sec_definicion_matriz" >
+
+  <title>Definiciones.</title>
+
+  <assemblage>
+    <title>Definición de matriz</title>
+    <p>
+      Una <em> matriz de dimensión <m>m \times n</m> </em> es un conjunto de números ordenados en m filas y n columnas de la forma:
+    </p>
+    <p>
+      <me>
+				A=\begin{pmatrix} 
+				a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} \\
+				a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} \\
+				\vdots  &amp; \vdots  &amp; \cdots &amp; \vdots \\
+				a_{m1} &amp; a_{m2} &amp; \cdots &amp; a_{mn} \\
+				\end{pmatrix} \qquad 
+				A=\left( a_{ij} \right) \text{ donde } \begin{cases} 1 \leq i \leq m \cr 1 \leq j \leq n \end{cases}
+      </me>
+    </p>
+  </assemblage>
+
+  <p>
+    Las matrices suelen designarse con letras mayusculas y cada elemento genérico de la matriz se designa por <m>a_{ij}</m>, donde <m>i</m> es el número de fila que ocupa y <m>j</m> es el número de fila.
+	</p>
+	<p>
+		Para expresar abreviadamente una matriz escribiremos <m>A=\left (a_{ij} \right)</m> y si queremos expresar también la dimensión pondremos <m>A=\left( a_{ij} \right)_{m \times n}</m>
+  </p>
+
+	<example xml:id="ej_matriz1">
+    <statement>
+      <p>
+				Dada la matriz 
+				<m>A= \begin{pmatrix}  -1 &amp; 1  \\  2 &amp; -3 \\  3 &amp; -5 \\ \end{pmatrix}</m> , escribir su dimensión y los elementos <m>a_{12}</m>, <m>a_{22}</m> y <m>a_{31}</m>
+      </p>
+    </statement>
+    <solution>
+      <p>
+	La matriz tiene 3 filas y  2 columnas, luego su dimensión es <m>3x2</m>.
+      </p>
+      <p>
+	<m>a_{12} = 1</m>, <m>a_{22}= -3</m> y <m>a_{31}=3</m>
+      </p>
+    </solution>
+  </example>
+
+	<example xml:id="ej-matriz3">
+    <statement>
+      <p>
+	Escribe una matriz <m>M</m> de orden <m>2 \times 3</m> tal que sus elementos <m>a_{ij}</m> verifiquen que:
+	<m>a_{ij}= \dfrac{(i+j)^2}{2}</m>
+      </p>
+    </statement>
+    <solution>
+      <p>
+	La matriz tendrá dos filas y tres columnas y sus elementos serán:
+      </p>
+      <p>
+	<me>
+	  a_{11}= \dfrac{(1+1)^2}{2}= 2 \qquad a_{12}= \dfrac{(1+2)^2}{2}= \dfrac{9}{2} \qquad a_{13}= \dfrac{(1+3)^2}{2}= 8
+	</me>
+      </p>
+      <p>
+	<me>
+	  a_{21}= \dfrac{(2+1)^2}{2}=\dfrac{9}{2}  \qquad a_{22}= \dfrac{(2+2)^2}{2}= 8 \qquad a_{32}= \dfrac{(2+3)^2}{2}= \dfrac{25}{2}
+	</me>
+      </p>
+      <p>
+	Por lo tanto,
+      </p>
+      <p>
+	<me>
+	  M=\begin{pmatrix}2 &amp; \dfrac{9}{2} &amp; 8\\ \dfrac{9}{2} &amp; 8 &amp; \dfrac{25}{2}\end{pmatrix}
+	</me>
+      </p>
+    </solution>
+  </example>
+
+  <example>
+		<p>
+			Escribe una matriz <m>M</m> de orden <m>2 \times 3</m> tal que sus elementos <m>a_{ij}</m> verifiquen que: <m>a_{ij}= \dfrac{(i+j)^2}{2}</m>
+		</p>
+		<solution>
+			<p>
+				La matriz tendrá dos filas y tres columnas y sus elementos serán:
+			</p>
+			<p>
+				<me>a_{11}= \dfrac{(1+1)^2}{2}= 2 \qquad a_{12}= \dfrac{(1+2)^2}{2}= \dfrac{9}{2} \qquad a_{13}= \dfrac{(1+3)^2}{2}= 8</me>
+			</p>
+			<p>
+				<me>a_{21}= \dfrac{(2+1)^2}{2}=\dfrac{9}{2}  \qquad a_{22}= \dfrac{(2+2)^2}{2}= 8 \qquad a_{32}= \dfrac{(2+3)^2}{2}= \dfrac{25}{2}</me>
+			</p>
+			<p>
+				Por lo tanto, <me>M=\begin{pmatrix}2 &amp;\dfrac{9}{2} &amp; 8\\ \dfrac{9}{2}&amp;8 &amp; \dfrac{25}{2}\end{pmatrix}</me>
+			</p>
+		</solution>
+  </example>
+			
+  <example xml:id="ej_aplicacion-matriz-1">
+		<title>Aplicación de las matrices</title>
+		<p>
+			Una empresa de fabricación de electrodomésticos fabrica lavadoras, lavavajillas, frigoríficos y hornos en las tres fábricas que tiene en Bizkaia, Araba y Gipuzkoa.
+		</p>
+		<p>
+			La producción de estos electrodomésticos en las tres fábricas en el año 2019 están reflejadas en la siguiente tabla:
+		</p>
+		<table>
+			<caption></caption>
+			<tabular>
+				<row header="yes">
+					<cell halign="left"></cell>
+					<cell halign="center">Lavadoras</cell>
+					<cell halign="center">Lavavajillas</cell>
+					<cell halign="center">Frigoríficos</cell>
+					<cell halign="center">Hornos</cell>
+				</row>
+				<row class="odd">
+					<cell halign="left">Bizkaia</cell>
+					<cell halign="center">1500</cell>
+					<cell halign="center">700</cell>
+					<cell halign="center">450</cell>
+					<cell halign="center">500</cell>
+				</row>
+				<row class="even">
+					<cell halign="left">Araba</cell>
+					<cell halign="center">1000</cell>
+					<cell halign="center">500</cell>
+					<cell halign="center">300</cell>
+					<cell halign="center">250</cell>
+				</row>
+				<row class="odd">
+						<cell halign="left">Gipuzkoa</cell>
+						<cell halign="center">1200</cell>
+						<cell halign="center">600</cell>
+						<cell halign="center">400</cell>
+						<cell halign="center">350</cell>
+					</row>
+			</tabular>
+		</table>
+		<p>
+			Expresa estos datos en una matriz <m>A</m> e interpreta el significado de:
+		</p>
+		<p>
+			<ol label="a">
+				<li> La fila <m>F_1(A)</m></li>
+				<li> La columna <m>C_2(A)</m></li>
+				<li> El elemento <m>a_{34}</m></li>
+			</ol>
+		</p>
+		<p>
+			La matriz <m>A</m> tendrá 3 filas y 4 columnas, es decir, su dimensión será <m>3 \times 4</m>.
+		</p>
+		<solution>
+			<p>
+				<me>A= \begin{pmatrix}
+					1500 &amp; 700 &amp; 450 &amp; 500 \\
+					1000 &amp; 500 &amp; 300 &amp; 250 \\
+					1200 &amp; 600 &amp; 400 &amp; 350
+					\end{pmatrix}
+				</me>
+			</p>
+		  <p>
+				<ol label="a">
+					<li>
+						<p>
+							La fila <m>F_1(A)=\begin{pmatrix}
+							1500 &amp; 700 &amp; 450 &amp; 500 
+							\end{pmatrix}</m> representa los electrodomésticos fabricados en Bizkaia.
+						</p>
+	      	</li>
+		      <li>
+						<p>
+							La columna <m>C_2(A)= \begin{pmatrix}
+							700  \\
+							500 \\
+							600 
+							\end{pmatrix}</m> representa las lavadoras fabricadas.
+						</p>
+	      	</li>
+		      <li>
+						<p>
+		  				El elemento <m>a_{34}= 350</m> representa los hornos fabricados en Gipuzkoa.
+						</p>
+	      	</li>
+			  </ol>
+	  	</p>
+		</solution>
+  </example>
+
+  <assemblage>
+    <title>Igualdad de matrices</title>
+    <p>
+      Dos matrices de la misma dimensión <m>A_{mxn}=(a_{ij})</m> y <m>B_{mxn}=(b_{ij})</m> son iguales si <m>a_{ij}=b_{ij}\quad \forall i,j</m>
+    </p>
+  </assemblage>
+
+	<example xml:id="ej_matriz2">
+    <statement>
+      <p>
+	Hallar los valores de <m>x</m> e <m>y</m> para que las matrices <m> \begin{pmatrix}  x &amp; 1 \\  2 &amp; y \\ \end{pmatrix}</m>, <m> \begin{pmatrix}  3 &amp; x-2 \\  y &amp; x-1 \\ \end{pmatrix}</m> sean iguales.
+      </p>
+    </statement>
+    <solution>
+      <p>
+	Para que sean iguales cada elemento de la primera matriz tiene que ser igual a su correspondiente de la segunda.
+      </p>
+      <p>
+	Por lo tanto, <m>\begin{cases} x= 3 \cr 1= x-2 \cr 2= y \cr y=x-1 \end{cases}</m>
+      </p>
+      <p>
+	Resolviendo tenemos que <m>x=3 </m> e <m> y=1</m>.
+      </p>
+    </solution>
+  </example>
+
+	<assemblage>
+    <title>Matriz traspuesta</title>
+    <p>
+      La matriz traspuesta de uma matriz <m>A</m> de dimensión <m>m \times n</m> es la matriz que resulta de intercambiar las filas por las columnas o las columnas por las filas. Se denomina por <m>A^t</m> y su dimensión es <m>n \times m</m>.
+    </p>
+  </assemblage>
+
+	<example>
+		<statement>
+			<p>
+				Hallar la matriz traspuesta de las matrices:
+			</p>
+			<me>
+				A=\begin{pmatrix}
+				1 &amp; 2 &amp; -1 \\ 0 &amp; -2 &amp; 1
+				\end{pmatrix} \qquad B=\begin{pmatrix}
+				1 &amp; 2 &amp; -3 \\ 0 &amp; 2 &amp; -1 \\ 1 &amp; 1 &amp; 2 
+				\end{pmatrix} \qquad C=\begin{pmatrix}
+				1 \\ -1 \\ 3 \\ 0 
+				\end{pmatrix}
+			</me>
+		</statement>
+		<solution>
+			<me>
+				A^t = \begin{pmatrix}
+				1 &amp; 0 \\ 2 &amp; -2 \\ -1 &amp; 1
+				\end{pmatrix} \qquad >
+				B^t=\begin{pmatrix}
+				1 &amp; 0 &amp; 1 \\ 2 &amp; 2 &amp; 1 \\ -3 &amp; -1 &amp; 2 
+				\end{pmatrix} \qquad
+				C^t=\begin{pmatrix}
+				1 &amp; -1 &amp; 3 &amp; 0 
+				\end{pmatrix}
+			</me>
+		</solution>
+	</example>
+  
+  <subsection xml:id="sub_tipos-matrices" >
+		<title>Tipos de matrices.</title>
+		<p>
+			<ol label="a">
+	  		<li>
+        	<p>  
+          	<term> Matriz fila</term>: es la matriz que solo tiene una fila <m>A_{1n}</m>.
+        	</p>
+        	<p>
+          	<me>A= \begin{pmatrix}  -1 &amp; 1  &amp; 2  \\ \end{pmatrix}</me>
+        	</p>
+      	</li>
+      	<li>
+        	<p> 
+          	<term> Matriz columna</term>: es la matriz que solo tiene una fila <m>A_{m1}</m>
+        	</p>
+					<p>
+						<me>A= \begin{pmatrix}  -1 \\  1  \\  2  \\  -3   \\\end{pmatrix}</me>
+					</p>
+				</li>
+				<li>
+					<p>
+						<term>Matriz nula</term>: es la matriz en la que todos sus elementos son nulos.
+					</p>
+					<p>
+						<me>A= \begin{pmatrix}  0 &amp; 0  \\  0  &amp; 0 \\   0 &amp; 0 \\\end{pmatrix}</me>
+					</p>
+				</li>
+				<li>
+					<p>
+						<term>Matriz rectangular</term>: es la matriz que tiene distinto número de filas que de columnas.
+					</p>
+					<p>
+						<me>A= \begin{pmatrix}  -1 &amp; 1  &amp; 2  \\  -3  &amp; 3 &amp; -5 \\\end{pmatrix}</me>
+					</p>
+				</li>
+				<li>
+					<p> 
+						<term>Matriz cuadrada</term>: es la matriz que tiene igual número de filas que de columnas (m=n). En este caso podemos decir que la matriz es de orden n. 
+					</p>
+					<p>
+						<me>B= \begin{pmatrix}  -1 &amp; 1  &amp; 2  \\  -3  &amp; 3 &amp; -5 \\  2  &amp; 1 &amp; 6 \\\end{pmatrix}</me>
+					</p>
+					<p>
+						En una matriz cuadrada definimos:
+					</p>
+					<p>
+						<ol label="(i)">
+							<li>
+								<p> 
+									<term>Diagonal principal</term>: Son los elementos cuyo número de fila coincide con el de columna: <m>a_{ii}</m>
+								</p>
+								<p>
+									<me> 
+										\begin{pmatrix} 
+										\color{red} 1 &amp; -1 &amp; 3   \\
+										0 &amp; \color{red}3 &amp; 2  \\
+										3 &amp; -2  &amp; \color{red}2  \\ 
+										\end{pmatrix} 
+									</me>
+								</p>
+							</li>
+							<li>
+								<p>
+									<term>Diagonal secundaria</term>: Son todos los elementos tales que <m>i+j=n+1</m>.
+								</p>
+								<p>
+									<me> 
+										\begin{pmatrix} 
+										1 &amp; -1 &amp; \color{red} 3   \\
+										-2 &amp; \color{red}{-2} &amp; 1   \\
+										\color{red} 1 &amp; -3  &amp; -4  \\ 
+										\end{pmatrix} 
+									</me>
+								</p>
+							</li>
+          	</ol>
+        	</p>
+      	</li>
+    	</ol>
+  	</p>
+  	<p>
+    	Dentro de las matrices cuadradas podemos distinguir las siguientes:
+  	</p>
+		<p>
+			<term>Matrices triangular superior:</term> Son las que todos sus elementos por debajo de la diagonal principal son cero.
+		</p>
+		<p>
+			<me> 
+				\begin{pmatrix} 
+				1 &amp; -1 &amp; 3 &amp; 0  \\
+				\color{red}0 &amp; 3  &amp; 1 &amp; -1  \\
+				\color{red}0 &amp; \color{red}0 &amp; 2 &amp; 1 \\
+				\color{red}0 &amp; \color{red}0  &amp; \color{red}0 &amp; -4  \\ 
+				\end{pmatrix} 
+			</me>
+		</p>
+		<p>
+			<term>Matrices triangular inferior:</term> Son las que todos sus elementos por encima de la diagonal principal son cero.
+		</p>
+		<p>
+			<me>
+				\begin{pmatrix}1 &amp; \color{red}0 &amp; \color{red}0 &amp; \color{red}0  \\
+				-1 &amp; 3  &amp; \color{red}0 &amp; \color{red}0  \\
+				1 &amp; 2 &amp; -2 &amp; \color{red}0 \\
+				4 &amp; 0  &amp; 6 &amp; -2  \\ 
+				\end{pmatrix} 
+			</me>
+		</p>
+		<p>
+			<term>Matrices diagonal:</term> Son las que todos sus elementos fuera de la diagonal principal son cero.
+		</p>
+		<p>
+			<me>
+				\begin{pmatrix} 1 &amp; \color{red}0 &amp; \color{red}0 &amp; \color{red}0  \\
+				\color{red}0 &amp; 3  &amp; \color{red}0 &amp; \color{red}0  \\
+				\color{red}0 &amp; \color{red}0 &amp; -2 &amp; \color{red}0 \\
+				\color{red}0 &amp; \color{red}0  &amp; \color{red}0 &amp; -2  \\ 
+				\end{pmatrix}
+			</me>
+		</p>
+		<p>
+			<term>Matrices escalar:</term> Son las que todos sus elementos  de la diagonal principal son iguales y el resto cero.
+		</p>
+		<p>
+			<me>
+				\begin{pmatrix} -2 &amp; \color{red}0 &amp; \color{red}0 &amp; \color{red}0  \\
+				\color{red}0 &amp; -2  &amp; \color{red}0 &amp; \color{red}0  \\
+				\color{red}0 &amp; \color{red}0 &amp; -2 &amp; \color{red}0 \\
+				\color{red}0 &amp; \color{red}0  &amp; \color{red}0 &amp; -2  \\ 
+				\end{pmatrix}
+			</me> 
+		</p>
+		<p>
+			<term>Matrices identidad:</term> Son las que todos sus elementos  de la diagonal principal son 1 y el resto cero.
+		</p>
+		<p>
+			<me>
+				\begin{pmatrix} 1 &amp; \color{red}0 &amp; \color{red}0 &amp; \color{red}0  \\
+				\color{red}0 &amp; 1  &amp; \color{red}0 &amp; \color{red}0  \\
+				\color{red}0 &amp; \color{red}0 &amp; 1 &amp; \color{red}0 \\
+				\color{red}0 &amp; \color{red}0  &amp; \color{red}0 &amp; 1  \\ 
+				\end{pmatrix}
+			</me>
+		</p>
+		<p>
+			La matriz identidad se llama <m>I_n</m>, siendo <m>n</m> el orden de la matriz.
+		</p>
+		<p> 
+			<term>Matriz simétrica</term> Una matriz cuadrada,<m>A</m>, es <emp>simétrica</emp> si coincide con su traspuesta.
+			<me>A=A^t \rightarrow a_{ij}=a_{ji}</me>
+		</p>
+		<p>
+			Como consecuencia de la definición, en  una matriz simétrica los elementos situados en posiciones simétricas respecto a la diagonal principal son iguales.
+		</p>
+		<p>
+			<me>
+				\begin{pmatrix} 1 &amp; \color{red} 2 &amp; \color{blue} -5  \\
+				\color{red}2 &amp; -3  &amp; \color{green} 6   \\
+				\color{blue} -5 &amp; \color{green} 6 &amp; 0  \\
+				\end{pmatrix}
+			</me>
+		</p>
+		<p>
+			<term>Matriz antisimétrica: </term>Una matriz,<m>A</m>, es <emp>antisimétrica</emp> cuando su opuesta coincide con su traspuesta.
+			<me>-A=A^t \rightarrow -a_{ij}=a_{ji}</me>
+		</p>
+		<p>
+			Como consecuencia de la definición, en  una matriz antisimétrica todos los elementos de la diagonal principal son cero y los elementos situados en posiciones simétricas respecto a la diagonal principal son opuestos.
+		</p>
+		<p>
+			<me>
+				\begin{pmatrix} 0 &amp; \color{red} 2 &amp; \color{blue} -5  \\
+  			\color{red}-2 &amp; 0 &amp; \color{green} 6   \\
+  			\color{blue} 5 &amp; \color{green} -6 &amp; 0  \\
+				\end{pmatrix}
+			</me>
+		</p>
+
+	</subsection>
+<!-- 	<exercises> -->
+	<subsection xml:id="sub_ejercicios-definicion">
+		<title>Ejercicios</title>
+		<exercise>
+			<statement>
+				<p>
+					Escribe:
+				</p>
+				<p>
+					<ol label="(a)">
+						<li>
+							<p>
+								Una matriz triangular superior y otra inferior de orden 4.
+							</p>
+						</li>
+						<li>
+							<p>
+								La matriz identidad de orden 4.
+							</p>
+						</li>
+						<li>
+							<p>
+								Una matriz simétrica y otra antisimétrica de orden 4.
+							</p>
+						</li>
+						<li>
+							<p>
+								La matriz nula de dimensiones <m>3 \times 2</m>
+							</p>
+						</li>
+						<li>
+							<p>
+								Una matriz fila.
+							</p>
+						</li>
+					</ol>
+				</p>
+			</statement>
+			<answer>
+				<p>
+					<ol label="(a)">
+						<li>
+							<p>
+								<m>\begin{pmatrix}
+									1 &amp; 2 &amp; 0 &amp; -1 \\ 0 &amp; 2 &amp; -1 &amp; 3 \\ 0 &amp; 0 &amp; 6 &amp; -2 \\ 0 &amp; 0 &amp; 0 &amp; 1
+									\end{pmatrix} \qquad  \begin{pmatrix}
+									1 &amp; 0 &amp; 0 &amp; 0 \\ -2 &amp; 2 &amp; 0 &amp; 0 \\ 1 &amp; 3 &amp; 6 &amp; 0 \\ 2 &amp; 1 &amp; 0 &amp; 1
+									\end{pmatrix}</m>
+							</p>
+						</li>
+						<li>
+							<p>
+								<m>\begin{pmatrix}
+									1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1
+									\end{pmatrix}</m>
+							</p>
+						</li>
+						<li>
+							<p>
+								<m>
+									\begin{pmatrix}
+									1 &amp; 2 &amp; 0 &amp; -1 \\ 2 &amp; 2 &amp; -1 &amp; 3 \\ 0 &amp; -1 &amp; 6 &amp; -2 \\ -1 &amp; 3 &amp; -2 &amp; 1
+									\end{pmatrix} \qquad  \begin{pmatrix}
+									1 &amp; 2 &amp; 0 &amp; -1 \\ -2 &amp; 2 &amp; -1 &amp; 3 \\ 0 &amp; 1 &amp; 6 &amp; -2 \\ 1 &amp; -3 &amp; 2 &amp; 1
+									\end{pmatrix}
+								</m>
+							</p>
+						</li>
+						<li>
+							<p>
+								<m>
+									\begin{pmatrix}
+									0 &amp; 0  \\ 0 &amp; 0   \\ 0 &amp; 0  
+									\end{pmatrix}
+								</m>
+							</p>
+						</li>
+						<li>
+							<p>
+								<m>
+									\begin{pmatrix}
+									1 &amp; 2 &amp; 3 &amp; 4 &amp;  
+									\end{pmatrix}
+								</m>
+							</p>
+						</li>
+					</ol>
+				</p>
+			</answer>
+		</exercise>
+
+		<exercise>
+			<statement>
+				<p>
+					Escribir las siguientes matrices de dimensión <m>3 \times 3</m> cuyos elementos son:
+				</p>
+				<p>
+					<ol label="(a)">
+						<li>
+							<p>
+								<m>a_{ij} = \begin{cases} 2i+j &amp; i = j \cr 2i-j &amp; i \neq j \end{cases}</m>
+							</p>
+						</li>
+						<li>
+							<p>
+								<m>b_{ij} = \begin{cases} \dfrac{i-2j}{2} &amp; i > j \cr \dfrac{2i+j}{2}&amp; i \leq j \end{cases}</m>
+							</p>
+						</li>
+					</ol>
+				</p>
+			</statement>
+			<answer>
+				<p>
+					<ol label="(a)">
+						<li>
+							<p>
+								<m>A= \begin{pmatrix}
+								2 &amp; 0 &amp; -1 \\
+								3 &amp; 6 &amp; 1 \\
+								5 &amp; 4 &amp; 9
+								\end{pmatrix}
+							</m>
+							</p>
+						</li>
+						<li>
+							<p>
+								<m>
+									B=\begin{pmatrix}
+									\sfrac{3}{2} &amp; 2 &amp; \sfrac{5}{2} \\
+									0 &amp; 3 &amp; \sfrac{7}{2} \\
+									\sfrac{1}{2} &amp; -\sfrac{1}{2} &amp; \sfrac{9}{2}
+									\end{pmatrix}
+								</m>
+								</p>
+						</li>
+					</ol>
+				</p>
+			</answer>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+					Hallar los valores de <m>x</m>, <m>y</m> y <m>z</m> para que se cumpla:
+				</p>
+				<p>
+					<ol label="(a)">
+						<li>
+							<p>
+								<m>\begin{pmatrix}
+								x &amp; y \\ 2 &amp; 3
+								\end{pmatrix}= \begin{pmatrix}
+								-1	&amp; 2 \\ z &amp; 3
+								\end{pmatrix}</m>
+							</p>
+						</li>
+						<li>
+							<p>
+								<m>\begin{pmatrix}
+								x+y &amp; 2x \\ 3z &amp; xy 
+								\end{pmatrix}= \begin{pmatrix}
+								4 &amp; 2 \\ -3 &amp; 3
+								\end{pmatrix}</m>
+							</p>
+						</li>
+						<li>
+							<p>
+								<m>\begin{pmatrix}
+								x^2-4 &amp; y+z &amp;  4 \\ z-y &amp; 2x &amp; 4
+								\end{pmatrix}= \begin{pmatrix}
+								0 &amp; 3 &amp; y^2+3 \\ 1 &amp; 4 &amp; 2z
+								\end{pmatrix}</m>
+							</p>
+						</li>
+						<li>
+							<p>
+								<m>\begin{pmatrix}
+								x+y-z &amp; y+z &amp;  y^2 \\ 2x-y &amp; x+y &amp; x^2
+								\end{pmatrix}= \begin{pmatrix}
+								-1 &amp; 3 &amp; 1 \\ -1 &amp; 1 &amp; 0
+								\end{pmatrix}</m>
+							</p>
+						</li>
+					</ol>
+				</p>
+			</statement>
+			<answer>
+				<p>
+					<ol label="(a)">
+						<li>
+							<p>
+								<m>x=-1 </m> \\ <m>y=2 </m> \\ <m>z=2 </m>
+							</p>
+						</li>
+						<li>
+							<p>
+								<m>x=1 </m> \\ <m>y=3 </m> \\ <m>z=-1 </m>
+							</p>
+						</li>
+						<li>
+							<p>
+								<m>x=2 </m> \\ <m>y=1 </m> \\ <m>z=2 </m>
+							</p>
+							</li>
+							<li>
+								<p>
+									<m>x=0 </m> \\ <m>y=1 </m> \\ <m>z=2 </m>
+								</p>
+							</li>
+					</ol>
+				</p>
+			</answer>
+		</exercise>
+
+		<exercise>
+			<statement>
+				<p>
+					En un centro educativo los datos de matrícula por cursos son: en 1º 50 alumnos y 70 alumnas, en 2º 60 alumnos y 50 alumnas, en 3º 45 alumnos y 60 alumnas y en 4º 50 alumnos y 55 alumnas.
+				</p>
+				<p>
+					Un estudio revela que cada alumno/a de 1º lee cada año 2 novelas, ningún libro de poesía y un libro de otros temas. En 2º 3 novelas, 1 libro de poesía y 2 de otros temas. En 3º 4 novelas, 2 libros de poesía y 1 de otros temas. En 4º 2 novelas, 1 libro de poesía y ninguno de otros temas.
+				</p>
+				<p>
+					Disponer la información acerca de la matrícula y lectura en dos matrices e indicar que significa la fila 1 de la primera matriz, la columna 2 de la segunda matriz y el elemento de la fila 2 y columna 1 de la primera.
+				</p>
+			</statement>
+			<answer>
+				<p>
+					<m> M= \begin{pmatrix} 50 &amp; 70 \\ 60 &amp; 50 \\ 45 &amp; 60 \\ 50 &amp; 55 \end{pmatrix} \qquad  L= \begin{pmatrix}
+							2 &amp; 0 &amp; 1 \\ 3 &amp; 1 &amp; 2 \\ 4 &amp; 2 &amp; 1 \\ 2 &amp; 1 &amp; 0 
+							\end{pmatrix} 
+					</m>
+				</p>
+				<p>
+					<m>F_1(M)=</m> Alumnos/as en primero.
+				</p>
+				<p>
+					<m>C_2(L)=</m> Libros de poesia leidos en cada nivel.
+				</p>
+				<p>
+					<m>m_{21} =</m> Alumnos en segundo.
+				</p>
+			</answer>
+		</exercise>
+	</subsection>
+	<!-- </exercises> -->
+</section>

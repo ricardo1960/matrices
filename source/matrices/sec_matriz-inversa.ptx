@@ -1,0 +1,630 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<section xml:id="sec_matriz_inversa">
+  <title>Inversa de una matriz</title>
+  <introduction>
+    <p>
+      La matriz inversa de una matriz cuadrada <m>A</m> de orden <m>n</m> es otra matriz <m>A^{-1}</m> de orden <m>n</m> que verifica: <me>A\cdot A^{-1}=A^{-1} \cdot A = I</me> Las matrices que tienen inversa se llaman <term>matrices regulares</term> y las que no tienen inversa se llaman <term>matrices singulares</term>.
+    </p>
+    
+    <p>
+      Para calcular la matriz inversa vamos a utilizar tres procedimientos:
+    </p>
+    
+    <p>
+      <ol>
+        <li>
+          <p>
+            Mediante la definición.
+          </p>
+        </li>
+        
+        <li>
+          <p>
+            Método de Gauss-Jordan.
+          </p>
+        </li>
+        
+        <li>
+          <p>
+            Por determinantes.
+          </p>
+        </li>
+        
+      </ol>
+    </p>
+  </introduction>
+  
+  <subsection xml:id="calculo_inversa_definicion">
+    <title>Calculo mediante la definición</title>
+    
+    <p>
+      En este procedimiento escribiremos cada elemento de la matriz inversa como una incógnita y mediante la definición de matriz inversa plantearemos un sistema de ecuaciones que luego resolveremos calculando de esta manera cada uno de los elementos de la matriz inversa.
+    </p>
+    
+    <example xml:id="exa_inve_defi1">
+      <statement>
+        <p>
+          Dada la matriz 
+          <m>
+            A= \begin{pmatrix} 
+            2&amp; -1 \\
+            -7&amp; 4 \\
+            \end{pmatrix}
+            </m>, hallar su inversa, si existe.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          La matriz <m>A</m> es de orden <m>2</m>, por lo tanto, la inversa también será de orden <m>2</m>.
+        </p>
+        
+        <p>
+          Es decir, <m>A^{-1}=\begin{pmatrix} 
+            x&amp; y \\
+            z&amp; t \\ 
+            \end{pmatrix}</m>
+        </p>
+        
+        <p>
+          Utilizaremos ahora la definición de matriz inversa y calcularemos las incógnitas y la matriz inversa.
+        </p>
+        
+        <p>
+          <m>
+            A\cdot A^{-1}= I \Leftrightarrow \begin{pmatrix} 
+            2&amp; -1 \\
+            -7&amp; 4 \\
+            \end{pmatrix} 
+            \begin{pmatrix} 
+            x&amp; y \\
+            z&amp; t \\ 
+            \end{pmatrix}
+            =\begin{pmatrix} 
+            1&amp; 0 \\
+            0&amp; 1 \\ 
+            \end{pmatrix}
+          </m>
+        </p>
+        
+        <p>
+          Operando e igualando las dos matrices:
+        </p>
+        
+        <p>
+          <m>
+            \begin{pmatrix} 
+            2x-z&amp; 2y-t \\
+            -7x+4z&amp; -7y+4t \\ 
+            \end{pmatrix}=\begin{pmatrix} 
+            1&amp; 0 \\
+            0&amp; 1 \\ 
+            \end{pmatrix} \Leftrightarrow
+            \left. 
+            \begin{array}{l}
+            2x-z = 1 \\
+            2y-t = 0 \\
+            -7x+4z = 0 \\
+            -7y+4t = 1 \\
+            \end{array}
+            \right\rbrace
+            \Rightarrow 
+            \begin{array}{l}
+            x = 4 \\
+            y =1 \\
+            z =7 \\
+            t = 2 \\
+            \end{array}
+          </m>
+        </p>
+        
+        <p>
+          Luego la matriz inversa de <m>A=\begin{pmatrix} 
+            2&amp; -1 \\
+            -7&amp; 4 \\
+            \end{pmatrix}</m> es: <m>A^{-1}= \begin{pmatrix}
+            4&amp; 1 \\
+            7&amp; 2 \\
+            \end{pmatrix}</m>
+        </p>
+      </solution>
+    </example>
+  </subsection>
+  
+  <subsection xml:id="calculo_inversa_gaussjordan">
+    <title>Calculo de la matriz inversa por el método de Gauss-Jordan</title>
+    
+    <p>
+      En este método calcularemos la matriz inversa de una matriz mediante transformaciones elementales.
+    </p>
+    
+    <p>
+      Este método consiste en lo siguiente:
+    </p>
+    
+    <p>
+      <ul>
+        <li>
+          <p>
+            Tomamos una matriz formada por la matriz <m>A</m> y la matriz identidad del mismo orden. Esta matriz la simbolizaremos por <m>\left( \begin{array}{c | c}
+              A &amp;  I 
+              \end{array} \right)</m>
+          </p>
+        </li>
+        
+        <li>
+          <p>
+            Realizamos transformaciones elementales para llegar a la matriz: <m>\left( \begin{array}{c | c} I &amp; B 
+              \end{array} \right)</m>
+          </p>
+        </li>
+        
+      </ul>
+    </p>
+    
+    <p>
+      La matriz <m>B</m> es la inversa de la matriz <m>A</m>, es decir <m>A^{-1}</m>
+    </p>
+    
+    <p>
+      Las transformaciones elementales son las siguientes:
+    </p>
+    
+    <p>
+      <ol>
+        <li>
+          <p>
+            Intercambiar dos filas. <m>F_i \leftrightarrow F_j</m>
+          </p>
+        </li>
+        
+        <li>
+          <p>
+            Multiplicar una fila por un número distinto de cero. <m>F_i \rightarrow kF_i</m>
+          </p>
+        </li>
+        
+        <li>
+          <p>
+            Sumar dos filas multiplicadas por sendos números y sustituir una de estas filas por el resultado. <m>F_i \rightarrow kF_i+tF_j</m>.
+          </p>
+        </li>
+        
+      </ol>
+    </p>
+    
+    <example xml:id="exa_inve_gauss1" >
+      <statement>
+        <p>
+          Hallar la inversa de la matriz:
+          <m>
+            \begin{pmatrix}
+            1 &amp; 2  \\
+            2 &amp; 3   \end{pmatrix}
+            </m>.
+        </p>
+      </statement>
+      
+      <solution>
+        <p></p>
+        <md>
+          <mrow>
+            \left( \begin{array}{cc|cc}
+            1 &amp; 2 &amp; 1 &amp; 0 \\
+            2 &amp; 3 &amp; 0 &amp; 1 \\
+            \end{array} \right) &amp; 
+            \begin{array}{l}
+            \\
+            \rightarrow F_2=F_2-2F_1
+            \end{array}
+          </mrow>
+          <mrow>
+          </mrow>
+          <mrow>
+            \left( \begin{array}{cc|cc}
+            1 &amp; 2  &amp; 1 &amp; 0 \\
+            0 &amp; -1  &amp; -2 &amp; 1 \\
+            \end{array} \right) &amp; 
+            \begin{array}{l}
+            \rightarrow F_1=F_1+2F_1 \\
+            \\
+            \end{array}
+          </mrow>
+          <mrow>
+          </mrow>
+          <mrow>
+            \left( \begin{array}{cc|cc}
+            1 &amp; 0  &amp; -3 &amp; 2 \\
+            0 &amp; -1  &amp; -2 &amp; 1 \\
+            \end{array} \right) &amp;
+            \begin{array}{l}
+            \\
+            \rightarrow F_2=-F_2 
+            \end{array}
+          </mrow>
+          <mrow>
+          </mrow>
+          <mrow>
+            \left( \begin{array}{cc|cc}
+            1 &amp; 0 &amp;  -3 &amp; 2 \\
+            0 &amp; 1  &amp; 2 &amp; -1 \\
+            \end{array} \right) &amp;
+          </mrow>
+        </md>
+        
+        <p>
+          Luego la matriz inversa de <m>A</m> es
+        </p>
+        <me>
+          A^{-1}=\begin{pmatrix}
+          -3&amp; 2 \\
+          2&amp; -1 \\
+          \end{pmatrix}
+        </me>
+ 
+      </solution>
+    </example>
+    
+    <example xml:id="exa_inve_gauss2" >
+      <statement>
+        <p>
+          Hallar la inversa de la matriz <m>B=\begin{pmatrix}
+            1 &amp; -1 &amp; 1 \\
+            2 &amp; 0 &amp; 1 \\
+            -1 &amp; 1 &amp; 1
+            \end{pmatrix}</m>
+        </p>
+      </statement>
+      
+      <solution>
+        <p></p>
+        <md>
+          <mrow>
+            \left( \begin{array}{ccc|ccc}  1 &amp; -1 &amp; 1 &amp; 1 &amp; 0 &amp; 0 \\
+            0 &amp; 2 &amp; -1 &amp; -2 &amp; 1 &amp; 0 \\
+            0 &amp; 0 &amp; 2 &amp; 1 &amp; 0 &amp; 1 
+            \end{array} \right) &amp;
+            \begin{array}{l}  \\  \rightarrow f_2=f_2-2f_1 \\  \rightarrow f_3=f_3+f_1 \end{array}
+          </mrow>
+          <mrow>
+          </mrow>
+          <mrow>
+            \left( \begin{array}{ccc|ccc} 
+            1 &amp; -1 &amp; 1 &amp; 1 &amp; 0 &amp;0 \\
+            0 &amp; 2 &amp; -1 &amp; -2 &amp; 1 &amp; 0 \\
+            0 &amp; 0 &amp; 2 &amp; 1 &amp; 0 &amp; 1
+            \end{array} \right) &amp;
+            \begin{array}{l} \rightarrow f_1=2f_1+f_2 \\ \\ \\ \end{array}
+          </mrow>
+          <mrow>
+          </mrow>
+          <mrow>
+            \left( \begin{array}{ccc|ccc} 
+            2 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp;0 \\
+            0 &amp; 2 &amp; -1 &amp; -2 &amp; 1 &amp; 0 \\
+            0 &amp; 0 &amp; 2 &amp; 1 &amp; 0 &amp; 1
+            \end{array} \right) &amp;
+            \begin{array}{l} \rightarrow f_1=2f_1-f_3 \\ \rightarrow f_2=2f_2+f_3 \\ \\ \end{array}
+          </mrow>
+          <mrow>
+          </mrow>
+          <mrow>
+            \left( \begin{array}{ccc|ccc} 
+            4 &amp; 0 &amp; 0 &amp; -1 &amp; 2 &amp; -1 \\
+            0 &amp; 4 &amp; 0 &amp; -3 &amp; 2 &amp; 1 \\
+            0 &amp; 0 &amp; 2 &amp; 1 &amp; 0 &amp; 1
+            \end{array} \right) &amp;
+            \begin{array}{l} \rightarrow f_1=f_1/4 \\ \rightarrow f_2=f_2/4 \\ \rightarrow f_3=f_3/2 \end{array}
+          </mrow>
+          <mrow>
+          </mrow>
+          <mrow>
+            \left( \begin{array}{ccc|ccc}
+            1 &amp; 0 &amp; 0 &amp; -1/4 &amp; 1/2 &amp; -1/4 \\
+            0 &amp; 1 &amp; 0 &amp; -3/4 &amp; 1/2 &amp; 1/4 \\
+            0 &amp; 0 &amp; 1 &amp; 1/2 &amp; 0 &amp; 1/2
+            \end{array} \right)
+          </mrow>
+        </md>
+        <me>
+          B^{-1}=\begin{pmatrix}
+          -1/4 &amp; 1/2 &amp; -1/4 \\
+          -3/4 &amp; 1/2 &amp; 1/4 \\
+          1/2 &amp; 0 &amp; 1/2
+          \end{pmatrix}
+        </me>
+      </solution>
+    </example>
+  </subsection>
+  
+  <subsection xml:id="calculo_inversa_determinantes">
+    <title>Cálculo de la matriz inversa por determinantes</title>
+    
+    <p>
+      La condición necesaria y suficiente para que una matriz tenga inversa es que su determinante sea distinto de cero. <me>\exists A^{-1} \Leftrightarrow |A| \neq 0</me>
+    </p>
+    
+    <p>
+      Si existe la matriz inversa se puede calcular de la siguiente forma:
+    </p>
+    <assemblage>    
+      <p>
+        <me> A^{-1}= \dfrac{1}{|A|}\cdot \left[ Adj (A) \right]^t = \dfrac{1}{|A|}\cdot Adj  \left( A^t \right) </me>
+      </p>
+    </assemblage>
+    <example xml:id="exa_inve_dete1" >
+      <statement>
+        <p>
+          Hallar la matriz inversa de : 
+          <m>
+            A=\begin{pmatrix}
+            1 &amp; 0 &amp; 0 \\
+            0 &amp; 0 &amp; -1 \\
+            2 &amp; -1 &amp; 1
+            \end{pmatrix}
+          </m>
+        </p>
+        
+      </statement>
+      
+      <solution>
+        
+        <p>
+          Hallamos el determinante de <m>A</m>. <m>|A|=0+0+0-0-1-0=-1</m>
+        </p>
+        
+        <p>
+          Como el determinante es distinto de cero la matriz tiene inversa.
+        </p>
+        
+        <p>
+          Hallamos la matriz adjunta de <m>A</m>.
+        </p>
+        
+        <p>
+          <me>
+            \begin{array}{lll}
+            A_ {11}=\begin{vmatrix}
+            0 &amp; -1 \\
+            -1 &amp; 1
+            \end{vmatrix}=-1 &amp;  
+            A_ {12}=-\begin{vmatrix}
+            0 &amp; -1 \\
+            2 &amp; 1
+            \end{vmatrix}=-2 &amp; 
+            A_ {13}=\begin{vmatrix}
+            0 &amp; 0 \\
+            2 &amp; -1
+            \end{vmatrix}=0 \\
+            A_ {21}=-\begin{vmatrix}
+            0 &amp; 0 \\
+            -1 &amp; 1
+            \end{vmatrix}=0 &amp; 
+            A_ {22}=\begin{vmatrix}
+            1 &amp; 0 \\
+            2 &amp; 1
+            \end{vmatrix}=1 &amp; 
+            A_ {23}=-\begin{vmatrix}
+            1 &amp; 0 \\
+            2 &amp; -1
+            \end{vmatrix}=1 \\
+            A_ {31}=\begin{vmatrix}
+            0 &amp; 0 \\
+            0 &amp; -1
+            \end{vmatrix}=0 &amp; 
+            A_ {32}=-\begin{vmatrix}
+            1 &amp; 0 \\
+            0 &amp; -1
+            \end{vmatrix}=1 &amp; 
+            A_ {33}=\begin{vmatrix}
+            1 &amp; 0 \\
+            0 &amp; 0
+            \end{vmatrix}=0
+            \end{array}
+          </me>
+        </p>
+        
+        <p>
+          <me>
+            (Adj A)= 
+            \begin{pmatrix}
+            -1 &amp; -2 &amp; 0 \\
+            0 &amp; 1 &amp; 1 \\
+            0 &amp; 1 &amp; 0
+            \end{pmatrix} \qquad 
+            \left( Adj A \right)^t=
+            \begin{pmatrix}
+            -1 &amp; 0 &amp; 0 \\
+            -2 &amp; 1 &amp; 1 \\
+            0 &amp; 1 &amp; 0
+            \end{pmatrix}
+          </me>
+        </p>
+        
+        <p>
+          <me>
+            A^{-1}= \dfrac{\left( Adj A \right)^t}{|A|}=
+            \begin{pmatrix}
+            1 &amp; 0 &amp; 0 \\
+            2 &amp; -1 &amp; -1 \\
+            0 &amp; -1 &amp; 0
+            \end{pmatrix}
+          </me>
+        </p>
+      </solution>
+    </example>
+
+    <example>
+      <statement>
+        <p>
+				Sea <m>m</m> un número real y considerese la matriz <me>A=\begin{pmatrix}
+				1 &amp; 0 &amp; m \\
+				m &amp; 0 &amp; -1 \\
+				2 &amp; -1 &amp; 1
+				\end{pmatrix}</me>
+			</p>
+
+			<p>
+				<ol>
+					<li>
+						<p>
+							Determine todos los valores de <m>m</m> para los que la matriz <m>A</m> tiene inversa.
+						</p>
+					</li>
+					<li>
+						<p>
+							Determine, si existe, la inversa de <m>A</m> cuando <m>m=0</m>
+						</p>
+					</li>
+					<li>
+						<p>
+							Determine, si existe, la inversa de <m>A^2</m> cuando <m>m=0</m>
+						</p>
+					</li>
+				</ol>
+			</p>
+      </statement>
+      <solution>
+      	<p>
+          <ol>
+            <li>
+              <p>
+                <m>\exists A^{-1}</m> si <m>|A| \neq 0</m>
+              </p>
+              <p>
+                <m>|A|=\begin{vmatrix}
+                  1 &amp; 0 &amp; m \\
+                  m &amp; 0 &amp; -1 \\
+                  2 &amp; -1 &amp; 1
+                  \end{vmatrix}=-m^2-1</m>
+              </p>
+              <p>
+                <m>-m^2-1 =0 \Rightarrow</m> No tiene solución, por lo tanto, <m>|A| \neq 0</m> para <m>\forall m \in \R</m>
+              </p>
+              <p>
+                Luego la matriz siempre tiene inversa.
+              </p>
+            </li>
+            <li>
+              <p>
+                Para <m>m=0 \qquad A=\begin{pmatrix}
+                1 &amp; 0 &amp; 0 \\
+                0 &amp; 0 &amp; -1 \\
+                2 &amp; -1 &amp; 1
+                \end{pmatrix}</m>
+              </p>
+              <p>
+                <m>|A|=-1</m>
+              </p>
+              <p>
+                Hallamos la matriz adjunta de <m>A</m>.
+              </p>
+              <p>
+                <me>
+                  \begin{matrix}
+                  A_ {11}=\begin{vmatrix}
+                  0 &amp; -1 \\
+                  -1 &amp; 1
+                  \end{vmatrix}=-1 &amp; A_ {12}=-\begin{vmatrix}
+                  0 &amp; -1 \\
+                  2 &amp; 1
+                  0\end{vmatrix}=-2 &amp; A_ {13}=\begin{vmatrix}
+                  0 &amp; 0 \\
+                  2 &amp; -1
+                  \end{vmatrix}=0 \\
+                  A_ {21}=-\begin{vmatrix}
+                  0 &amp; 0 \\
+                  -1 &amp; 1
+                  \end{vmatrix}=0 &amp; A_ {22}=\begin{vmatrix}
+                  1 &amp; 0 \\
+                  2 &amp; 1
+                  \end{vmatrix}=1 &amp; A_ {23}=-\begin{vmatrix}
+                  1 &amp; 0 \\
+                  2 &amp; -1
+                  \end{vmatrix}=1 \\
+                  A_ {31}=\begin{vmatrix}
+                  0 &amp; 0 \\
+                  0 &amp; -1
+                  \end{vmatrix}=0 &amp; A_ {32}=-\begin{vmatrix}
+                  1 &amp; 0 \\
+                  0 &amp; -1
+                  \end{vmatrix}=1 &amp; A_ {33}=\begin{vmatrix}
+                  1 &amp; 0 \\
+                  0 &amp; 0
+                  \end{vmatrix}=0
+                  \end{matrix}
+                </me>
+              </p>
+              <p>
+                <me>
+                  (Adj A)= \begin{pmatrix}
+                  -1 &amp; -2 &amp; 0 \\
+                  0 &amp; 1 &amp; 1 \\
+                  0 &amp; 1 &amp; 0
+                  \end{pmatrix} \qquad \left( Adj A \right)^t=\begin{pmatrix}
+                  -1 &amp; 0 &amp; 0 \\
+                  -2 &amp; 1 &amp; 1 \\
+                  0 &amp; 1 &amp; 0
+                  \end{pmatrix}  
+                </me>
+                <me>
+                  A^{-1}=\begin{pmatrix}
+                  1 &amp; 0 &amp; 0 \\
+                  2 &amp; -1 &amp; -1 \\
+                  0 &amp; -1 &amp; 0
+                  \end{pmatrix}
+                </me>
+              </p>
+            </li>
+            <li>
+              <p>
+                <md>
+                  <mrow>
+                    \left( A^2 \right)^{-1} &amp; = (A \cdot A)^{-1}=A^{-1} \cdot A^{-1}
+                  </mrow>
+                  <mrow>  
+                    &amp; =\begin{pmatrix}
+                    1 &amp; 0 &amp; 0 \\
+                    2 &amp; -1 &amp; -1 \\
+                    0 &amp; -1 &amp; 0
+                    \end{pmatrix} \cdot \begin{pmatrix}
+                    1 &amp; 0 &amp; 0 \\
+                    2 &amp; -1 &amp; -1 \\
+                    0 &amp; -1 &amp; 0
+                    \end{pmatrix} 
+                  </mrow>
+                  <mrow>
+                    &amp; = \begin{pmatrix}
+                    1 &amp; 0 &amp; 0 \\
+                    0 &amp; 2 &amp; 1 \\
+                    -2 &amp; 1 &amp; 1
+                    \end{pmatrix}
+                  </mrow>
+                </md>
+              </p>
+            </li>
+          </ol>
+        </p>
+      
+      </solution>
+    </example>
+  </subsection>
+  
+  <exercise>
+    <statement>
+      <p>
+        Dadas las matrices: <m> A=\begin{pmatrix} 1 &amp; 2 &amp; m \\ 1 &amp; -1 &amp; -1 \end{pmatrix}</m> y <m>B=\begin{pmatrix} 1 &amp; 2 \\ m &amp; 0 \\ 0 &amp; 2 \end{pmatrix}</m>, donde <m>m</m> es un número real. Encuentra los valores de <m>m</m> para los cuales <m>A \cdot B </m> tiene inversa.
+      </p>
+    </statement>
+    <hint>
+      <p>
+        Para que exista inversa el determinante de <m>A \cdot B</m> tiene que ser distinto de cero.
+      </p>
+    </hint>
+    <answer>
+      <p>
+        <m>m \in \R -\{ -1,1 \}</m>
+      </p>
+    </answer>
+  </exercise>
+</section>

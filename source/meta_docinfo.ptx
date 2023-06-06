@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- The docinfo block is the analogue to the latex preamble -->
+<!-- This is where you can define macros and other book-wide -->
+<!--  settings.                                              -->
+<docinfo xmlns:xi="http://www.w3.org/2001/XInclude">
+
+<!-- The next three lines are likely for mature projects only: -->
+
+<!-- <brandlogo url="" source="images/cover.png"/> -->
+<!-- <covers front="images/front.pdf" back="images/back.pdf"/> -->
+<!-- <document-id>unique-book-id</document-id> -->
+
+<!-- macros for defining latex math shortcuts. It is good practice  -->
+<!-- to define these semantically, so that the macro relates to what-->
+<!-- it defines.                                                    -->
+<macros>
+\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\renewcommand{\vector}[1]{\overrightarrow{#1}}
+\newenvironment{matrizgauss}{\left( \begin{array}{ccc|ccc}}{\end{array} \right)}
+\newenvironment{matrizampliada}{\left( \begin{array}{ccc|c}}{\end{array} \right)}
+\newenvironment{sistematres}{\left\lbrace \begin{array}{rrrrrrr}}{\end{array} \right.}
+\newenvironment{sistemados}{\left\lbrace \begin{array}{rrrr}}{\end{array} \right.}
+\newenvironment{adjunto}{\[ \begin{array}{lll}}{\end{array} \]}
+\newenvironment{sistema}{\left\lbrace \begin{array}{rrrrrr}}{\end{array} \right. }
+\newcommand{\limite}[2]{\displaystyle \lim_{x \rightarrow #1}{#2}}
+\newcommand{\limiteserie}[1]{\displaystyle \lim_{n \rightarrow +\infty}{#1}}
+\newcommand{\matrizdos}[4]{\begin{pmatrix} #1 &amp; #2 \\  #3 &amp; #4  \end{pmatrix}}
+\newcommand{\determinantedos}[4]{\begin{vmatrix} #1 &amp; #2 \\ #3 &amp; #4  \end{vmatrix}}
+\newcommand{\matriztres}[9]{\begin{pmatrix} #1 &amp; #2 &amp; #3 \\ #4 &amp; #5 &amp; #6 \\ #7 &amp; #8 &amp; #9 \end{pmatrix}}
+\newcommand{\determinantetres}[9]{\begin{vmatrix} #1 &amp; #2 &amp; #3 \\ #4 &amp; #5 &amp; #6 \\ #7 &amp; #8 &amp; #9 \end{vmatrix}}
+\newcommand{\filasistematres}[6]{#1 &amp; #2 &amp; #3 &amp;#4 &amp; #5 &amp; = &amp; #6}
+\newcommand{\integral}[1]{\displaystyle \int #1}
+\newcommand{\intdef}[3]{\displaystyle \int_#1^#2 #3}
+\usepackage{xfrac}
+\usepackage{extarrows}
+</macros>
+
+<!-- If you put any latex-image elements you can include preambles  -->
+<!-- for those in the next element.                                 -->
+<latex-image-preamble>
+  \usepackage{tikz, pgfplots}
+  \usetikzlibrary{positioning,matrix,arrows}
+  \usetikzlibrary{shapes,decorations,shadows,fadings,patterns}
+  \usetikzlibrary{decorations.markings} 
+  \usepackage{tikzpagenodes}
+  \usepackage{tikz-3dplot}
+  \usepackage{tkz-tab,tkz-fct,tkz-euclide}
+</latex-image-preamble>
+
+<!-- It is possible to rename elements using the tags below -->
+  <rename element="investigation" xml:lang="es-ES">Investigación</rename>
+  <rename element="assemblage" xml:lang="en-US">Summary</rename>
+  <rename element="inlineexercise" xml:lang="es-ES">Ejercicio</rename>
+<!-- Specify the default type of cross reference:           -->
+  <cross-references text="type-global" />
+  
+
+</docinfo>

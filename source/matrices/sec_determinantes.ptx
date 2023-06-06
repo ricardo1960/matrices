@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<section xml:id="determinantes">
+  <title>Determinantes</title>
+  <introduction>
+    <p>
+      Definiciones de determinantes.
+    </p>
+  </introduction>
+  <assemblage>
+  <title>Determinante de orden 2</title>
+    <p>
+      Dada una matriz de orden 2,<m>A=\begin{pmatrix}
+      a_{11} \amp a_{12}  \\
+      a_{21} \amp a_{22} 
+      \end{pmatrix}</m>, se llama determinante de <m>A</m> al número real :
+    </p>
+
+    <p>
+      <me>
+        det(A)= |A|= \begin{vmatrix}
+        a_{11} \amp a_{12}  \\
+        a_{21} \amp a_{22} 
+        \end{vmatrix}=a_{11} \cdot a_{22}-a_{12}\cdot a_{21}ç
+      </me>
+    </p>
+
+  </assemblage>
+  
+  <example xml:id="exa_dete1">
+    <statement>
+      <p>Calcular el determinante de la matriz:
+      <me>A= \begin{pmatrix}
+        1 \amp 3  \\
+        2 \amp  5 
+        \end{pmatrix}
+      </me>
+      </p>
+    </statement>
+    <solution>
+      <p></p>
+      <p>
+        <me>
+          \begin{vmatrix} A \end{vmatrix} = \begin{vmatrix}
+          1 \amp 3  \\
+          2 \amp 5 
+          \end{vmatrix}=1\cdot 5-3\cdot 2=-1
+        </me>
+      </p>
+    </solution>
+  </example>
+    
+  <assemblage><title>Determinante de orden 3</title>
+  
+    <p>
+      Dada una matriz de orden 3,<m>A=\begin{pmatrix}
+      a_{11} \amp a_{12} \amp a_{13} \\
+      a_{21} \amp a_{22} \amp a_{23} \\
+      a_{31} \amp a_{32} \amp a_{33}
+      \end{pmatrix}</m>, se llama determinante de <m>A</m> al número real:
+    </p>
+
+	<p>
+      <me>
+        det(A)= |A|= \begin{vmatrix}
+        a_{11} \amp a_{12}  \amp a_{13} \\
+        a_{21} \amp a_{22} \amp a_{23}\\
+        a_{31} \amp a_{32} \amp a_{33}
+        \end{vmatrix} =
+      </me>
+      <me>
+        =a_{11} \cdot a_{12} \cdot a_{13}+a_{12} \cdot a_{23} \cdot a_{31}+a_{13} \cdot a_{32} \cdot a_{21}
+      </me>
+      <me>
+        -a_{13} \cdot a_{22} \cdot a_{31}-a_{23} \cdot a_{32} \cdot a_{21}-a_{33} \cdot a_{21} \cdot a_{12}
+      </me>
+	</p>
+  </assemblage>
+  
+  <p>
+    Para recordar estos productos podemos utilizar la regla de Sarrus:
+  </p>
+  
+  <figure>
+	<image source="images/sarrus.jpg" width="50%"/>
+      <caption>Sarrus</caption>
+  </figure>
+
+  <example xml:id="exa_dete2">
+    <statement>
+      <p>
+        Calcular el siguiente determinante: <m>\begin{vmatrix}1\amp2\amp3\\
+        0 \amp -1 \amp 2\\
+        2 \amp 1 \amp 3
+        \end{vmatrix}</m>
+      </p>
+    </statement>
+    
+    <solution>
+      <p></p>
+      <p>
+        Aplicamos la regla de Sarrus:
+      </p>
+
+      <p>
+        <m>\begin{vmatrix}
+        1 \amp 2 \amp 3 \\
+        0 \amp -1 \amp 2 \\
+        2 \amp 1 \amp3
+        \end{vmatrix}</m> 
+      </p>
+      <p>
+      <m>=1\cdot (-1) \cdot 3</m> <m>+2\cdot 2 \cdot 2</m> <m>+ 3\cdot 1 \cdot 0</m> <m>-3\cdot (-1)\cdot 2</m> <m>- 2\cdot 0\cdot 3</m> <m>- 1\cdot 1 \cdot 2</m> <m>=9</m>
+      </p>
+    </solution>
+  </example>
+
+  <subsection xml:id="propiedades-de-los-determinantes">
+    <title>Propiedades de los determinantes</title>
+
+	<p>
+      <ol>
+		<li>
+          <p>
+            Estas propiedades son válidas para determinantes de cualquier orden pero en los ejemplos usaremos determinantes de orden<m>3</m>
+          </p>
+		</li>
+
+		<li>
+          <p>
+            El determinante de una matriz y el de su traspuesta son iguales. Las propiedades valen indistintamente para filas o columnas. <me>\vert A \vert =\vert A^t \vert</me>
+          </p>
+		</li>
+
+		<li>
+          <p>
+            Si todos los elementos de una linea de un determinante son ceros, el determinante también es cero. <me>\begin{vmatrix}
+            1 \amp 0 \amp 2 \\
+            2 \amp 0 \amp 4 \\
+            -1 \amp 0 \amp 3
+            \end{vmatrix}=0</me>
+          </p>
+		</li>
+
+		<li>
+          <p>
+            Si en un determinante se intercambian dos lineas, el determinante cambia de signo. <me>\begin{vmatrix}
+            3 \amp -2 \amp 5 \\
+            1 \amp 7 \amp 3 \\
+            4 \amp 1 \amp 0
+            \end{vmatrix}=-168\longrightarrow \begin{vmatrix}
+            1 \amp 7 \amp 3 \\
+            3 \amp -2 \amp 5 \\
+            4 \amp 1 \amp 0
+            \end{vmatrix}=-(-168)=168</me>
+          </p>
+		</li>
+
+		<li>
+          <p>
+            Si en un determinante dos lineas son iguales, el determinante es cero. <me>\begin{vmatrix}
+            1 \amp 2 \amp 1 \\
+            3 \amp -5 \amp 3 \\
+            -2 \amp 6 \amp -2
+            \end{vmatrix}=0</me>.
+           </p>
+		</li>
+
+		<li>
+          <p>
+            Si los elementos de una linea se multiplican por un número, el determinante también se multiplica por ese número. <me>\begin{vmatrix}
+            1 \amp 5 \cdot 7 \amp 0 \\
+            -2 \amp 3 \cdot 7 \amp 4 \\
+            3 \amp 7 \cdot 7 \amp -1
+            \end{vmatrix}=7\begin{vmatrix}
+            1 \amp 5 \amp 0 \\
+            -2 \amp 3 \amp 4 \\
+            3 \amp 7 \amp -1
+            \end{vmatrix}</me>
+          </p>
+		</li>
+        
+
+		<li>
+          <p>
+            Si en un determinante dos lineas son proporcionales, el determinante es cero. <me>\begin{vmatrix}
+            1 \amp 5 \amp 0 \\
+            -2 \amp 3 \amp 4 \\
+            2 \amp 10 \amp 0
+            \end{vmatrix} \stackrel{F_{3}=2 \cdot F_{1}}{=}0</me>
+          </p>
+		</li>
+
+		<li>
+          <p>
+            Si los elementos de una línea se pueden descomponer en dos sumandos, su determinante es igual a la suma de dos determinantes que tienen iguales todas las líneas excepto la línea cuyos sumandos pasan, respectivamente, a cada uno de los determinantes. <me>\begin{vmatrix}
+            a_{11} \amp a_{12} + a'_{12} \amp a_{13} \\
+            a_{21} \amp a_{22} + a'_{22} \amp a_{23} \\
+            a_{31} \amp a_{32} + a'_{32} \amp a_{33}
+            \end{vmatrix}=\begin{vmatrix}
+            a_{11} \amp a_{12} \amp a_{13} \\
+            a_{21} \amp a_{22} \amp a_{23}\\
+            a_{31} \amp a_{32} \amp a_{33}
+            \end{vmatrix}+\begin{vmatrix}
+            a_{11} \amp a'_{12} \amp a_{13} \\
+            a_{21} \amp a'_{22} \amp a_{23}\\
+            a_{31} \amp a'_{32} \amp a_{33}
+            \end{vmatrix}</me>
+          </p>
+		</li>
+
+		<li>
+          <p>
+            Si a una linea de un determinante se le suma una combinación lineal de las demás lineas, el valor del determinante no varía. <me>\begin{vmatrix}
+            1 \amp 5 \amp 1 \\
+            -2 \amp 3 \amp 4 \\
+            2 \amp 10 \amp 3
+            \end{vmatrix} \stackrel{C_{2}+C_{1}-C_{3}}{=}\begin{vmatrix}
+            1 \amp 5 \amp 1 \\
+            -2 \amp -3 \amp 4 \\
+            2 \amp 9 \amp 3
+            \end{vmatrix}</me>
+          </p>
+		</li>
+
+		<li>
+          <p>
+            Si en una determinante una linea es combinación lineal de las demás el valor del determinante es cero. <me>\begin{vmatrix}
+            1 \amp 3 \amp 4 \\
+            2 \amp 3 \amp 5 \\
+            2 \amp -3 \amp -1
+            \end{vmatrix} \stackrel{C_{3}=C_{1}+C_{2}}{=}0</me>
+          </p>
+		</li>
+
+		<li>
+          <p>
+            El determinante del producto de dos matrices cuadradas es igual al producto de los determinantes de ambas matrices <me>\vert A \cdot B\vert=\vert A \vert\cdot \vert B\vert</me>
+          </p>
+		</li>
+
+      </ol>
+    </p>
+
+    <example xml:id="exa_dete3">
+      <statement>
+		    <p>
+          Sabiendo que <m>\begin{vmatrix}
+          a \amp b \amp c \\
+          1 \amp 1 \amp 1 \\
+          3 \amp 0 \amp 1
+          \end{vmatrix}= 2</m> calcula, usando las propiedades de los determinantes, <m>\begin{vmatrix}
+          3-a \amp -b \amp 1-c \\
+          1+a \amp 1+b \amp 1+c \\
+          3a \amp 3b \amp 3c 
+          \end{vmatrix}
+          \qquad \text{y} \qquad 
+          \begin{vmatrix}
+            2a \amp 2b \amp 2c \\
+          30 \amp 0 \amp 10 \\
+            4 \amp 4 \amp 4
+          \end{vmatrix}</m>
+		    </p>
+      </statement>
+      <solution>
+		    <p>
+          <md>
+            <mrow>
+              \begin{vmatrix}
+              3-a \amp -b \amp 1-c \\
+              1+a \amp 1+b  \amp 1+c \\
+              3a \amp 3b \amp 3c 
+              \end{vmatrix}
+              &amp; = 
+              \begin{vmatrix}
+              3 \amp 0 \amp 1 \\
+              1+a \amp 1+b \amp 1+c \\
+              3a \amp 3b \amp 3c 
+              \end{vmatrix}+\begin{vmatrix}
+              -a \amp -b \amp -c \\
+              1+a \amp 1+b \amp 1+c \\
+              3a \amp 3b \amp 3c 
+              \end{vmatrix} 
+            </mrow>
+            <mrow>
+              &amp; = 
+              \begin{vmatrix}
+              3 \amp 0 \amp 1 \\
+              1+a \amp 1+b \amp 1+c \\
+              3a \amp 3b \amp 3c 
+              \end{vmatrix} +  0  (F_3=-3F_1)
+            </mrow>
+            <mrow>
+              &amp; = 
+              \begin{vmatrix}
+              3 \amp 0 \amp 1 \\
+              1 \amp 1 \amp 1 \\
+              3a \amp 3b \amp 3c 
+              \end{vmatrix}+ \begin{vmatrix}
+              3 \amp 0 \amp 1 \\
+              a \amp b \amp c \\
+              3a \amp 3b \amp 3c 
+              \end{vmatrix}=
+            </mrow>
+            <mrow>
+              &amp; =\begin{vmatrix}
+              3 \amp 0 \amp 1 \\
+              1 \amp 1 \amp 1 \\
+              3a \amp 3b \amp 3c 
+              \end{vmatrix}+  0 (F_3=3F_2)
+            </mrow>
+            <mrow>
+              &amp; = 3\begin{vmatrix}
+              3 \amp 0 \amp 1 \\
+              1 \amp 1 \amp 1 \\
+              a \amp b \amp c 
+              \end{vmatrix}
+            </mrow>
+            <mrow>
+              &amp; = -3 \begin{vmatrix}
+              a \amp b \amp c\\
+              1 \amp 1 \amp 1 \\
+              3 \amp 0 \amp 1
+              \end{vmatrix} = -6
+            </mrow>
+          </md>
+        </p>
+
+        <p>
+			    <me>
+            \begin{vmatrix}
+            2a \amp 2b \amp 2c \\
+            30 \amp 0 \amp 10 \\
+            4 \amp 4 \amp 4
+            \end{vmatrix} =  2\cdot 10 \cdot 4 \begin{vmatrix}
+            a \amp b \amp c \\
+            3 \amp 0 \amp 1 \\
+            1 \amp 1 \amp 1
+            \end{vmatrix} = 800
+          </me>
+        </p>
+      </solution>
+    </example>
+  </subsection>
+  
+</section>

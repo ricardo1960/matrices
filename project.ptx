@@ -9,19 +9,19 @@
     <!-- To build this target, run `pretext build web` -->
     <target name="web">
       <format>html</format>
-      <source>source/main.ptx</source>
+      <source>source/articulo_matrices.ptx</source>
       <publication>publication/publication.ptx</publication>
       <output-dir>output/web</output-dir>
     </target>
     <target name="print" pdf-method="xelatex">
       <format>pdf</format>
-      <source>source/main.ptx</source>
+      <source>source/articulo_matrices.ptx</source>
       <publication>publication/publication.ptx</publication>
       <output-dir>output/print</output-dir>
     </target>
     <target name="print-latex">
       <format>latex</format>
-      <source>source/main.ptx</source>
+      <source>source/matrices.ptx</source>
       <publication>publication/publication.ptx</publication>
       <output-dir>output/print-latex</output-dir>
     </target>

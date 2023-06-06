@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<section xml:id="sec_rango_matriz">
+  <title>Rango de una matriz</title>
+  <introduction>
+    <p>
+      Una fila (o columna) de una matriz <m>F_i</m> (o <m>C_i</m>) depende linealmente de otras si existen números reales <m>a_1</m>, <m>a_2</m>, <m>\cdots</m>, <m>a_n</m> tales que <m>F_i</m> (o <m>C_i</m>) se pueden expresar como: <me>F_i=a_1 \cdot F_1+a_2 \cdot F_2+\cdots + a_n \cdot F_n \qquad C_i=a_1\cdot C_1+a_2 \cdot C_2+\cdots + a_n \cdot C_n</me>
+    </p>
+    <assignement>
+      <p>
+        El <term>rango de una matriz</term> es el número de filas o de columnas linelamente independientes.
+      </p>
+    </assignement>
+    <p>
+      Se puede demostrar que el número de filas linealmente independientes coincide con el número de columnas linalmente independiente. Por lo tanto, el rango de una matriz de orden <m>m \times n</m> siempre será menor o igual que el número más pequeño entre <m>m</m> y <m>n</m>.
+    </p>
+    <example>
+      <statement>
+        <p>
+          Dada la matriz 
+          <m>A=
+            \begin{pmatrix}
+            -1 &amp; 2 &amp; 4 &amp; 0 \\
+            3 &amp; 2 &amp; 1 &amp; -2 \\
+            7 &amp; 2 &amp; -2 &amp; -4 
+            \end{pmatrix}
+            </m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Comprueba que la tercera fila es combinación lineal de las dos primeras. ¿Cuál es el rango de <m>A</m>?. Si la tercera fila es combinación lineal de la primera entonces: <m>F_3=aF_1+bF_1</m>.
+        </p>
+        
+        <p>
+          Aplicando la igualdad anterior tenemos:
+        </p>
+        
+        <p>
+          <m>\begin{cases} -a+3b=7 \\ 2a+2b=2 \\ 4a+b=-2 \\ -2b=-4 \end{cases}</m>
+        </p>
+        
+        <p>
+          Resolviendo el sistema obtenemos <m>a=-1</m>, <m>b=2</m>. Es decir, <m>F_3=-F_1+2F_2</m>
+        </p>
+        
+        <p>
+          Como la primera fila y la segunda son independientes el rango de la matriz <m>A</m> será <m>2</m>.
+        </p>
+      </solution>
+    </example>
+  </introduction>
+  
+  <subsection xml:id="rango_matriz_escalonando">
+    <title>Calculo del rango de una matriz escalonando la matriz</title>
+    
+    <p>
+      Una matriz se dice que es una <term>matriz escalonada</term> si en ella se cumple:
+    </p>
+    
+    <p><ul>
+        <li>
+          <p>
+            Si hay filas nulas, están situadas en la parte inferior de la matriz.
+          </p>
+        </li>
+        
+        <li>
+          <p>
+            En las filas no nulas, el primer elemento diferente de cero de una fila está situado más a la derecha que el primer elemento no nulo de la fila inmediatamente superior.
+          </p>
+        </li>
+        
+        </ul></p>
+    
+    <p>
+      El rango de una matriz escalonada es el número de filas no nulas de ella. Lo denotaremos por <m>\text{ran}(A)</m>.
+    </p>
+    
+    <p>
+      Las siguientes matrices son matrices escalonadas:
+    </p>
+    
+    <p>
+      <m>
+        A=
+        \begin{pmatrix}
+        3 &amp; -1 &amp; 1 \\ 0 &amp; 2 &amp; 5 
+        \end{pmatrix}
+        </m>, 
+      <m>
+        B=
+        \begin{pmatrix}
+        1 &amp; 2 &amp; 3 &amp; 4 \\
+        0 &amp; 3 &amp; -2 &amp; 1 \\
+        0 &amp; 0 &amp; -1 &amp; 2 \\
+        0 &amp; 0 &amp; 0 &amp; 1 \\
+        0 &amp; 0 &amp; 0 &amp; 0 
+        \end{pmatrix}
+      </m>
+    </p>
+    
+    <p>
+      Dos matrices son equivalentes si una de ellas se obtiene a partir de la otra mediante transformaciones elementales.
+    </p>
+    
+    <p>
+      El rango de una matriz A es el rango de una matriz escalonada equivalente a ella.
+    </p>
+    <example xml:id="exa_rang_esca1">
+      <statement>
+        <p>
+          Calcula el rango de la matriz: 
+          <m>
+            \begin{pmatrix}
+            1 &amp; 2 &amp; 5 &amp; 6 \\
+            -1 &amp; -2 &amp; 0 &amp; 1 \\
+            3 &amp; 4 &amp; 5 &amp; 3 \\
+            -3 &amp; -4 &amp; 0 &amp; 0  
+            \end{pmatrix}
+          </m>
+        </p>
+        
+      </statement>
+      
+      <solution>
+        
+        <p>
+          Escalonamos la matriz haciendo ceros en todos los elementos por debajo de la diagonal:
+        </p>
+        
+        <p>
+          <me>
+            \begin{pmatrix}
+            1 &amp; 2 &amp; 5 &amp; 6 \\
+            -1 &amp; -2 &amp; 0 &amp; 1 \\
+            3 &amp; 4 &amp; 5 &amp; 3 \\
+            -3 &amp; -4 &amp; 0 &amp; 0  
+            \end{pmatrix} 
+            \begin{array}{c} f_2=f_2+f_1 \\ f_3=f_3-3f_1 \\  f_4=f_4+3f_1 \end{array} \Longrightarrow
+            \begin{pmatrix}
+            1 &amp; 2 &amp; 5 &amp; 6 \\
+            0 &amp; 0 &amp; 5 &amp; 7 \\
+            0 &amp; -2 &amp; -10 &amp; -15 \\
+            0 &amp; 2 &amp; 15 &amp; 18  
+            \end{pmatrix}
+          </me>
+          
+          <me>
+            \begin{pmatrix}
+            1 &amp; 2 &amp; 5 &amp; 6 \\
+            0 &amp; 0 &amp; 5 &amp; 7 \\
+            0 &amp; -2 &amp; -10 &amp; -15 \\
+            0 &amp; 2 &amp; 15 &amp; 18  
+            \end{pmatrix}
+            \begin{array}{c} f_2\leftrightarrow f_3  \end{array} \Longrightarrow
+            \begin{pmatrix}
+            1 &amp; 2 &amp; 5 &amp; 6 \\
+            0 &amp; -2 &amp; -10 &amp; -15 \\
+            0 &amp; 0 &amp; 5 &amp; 7 \\
+            0 &amp; 2 &amp; 15 &amp; 18  
+            \end{pmatrix}
+          </me>
+          
+          <me>
+            \begin{pmatrix}
+            1 &amp; 2 &amp; 5 &amp; 6 \\
+            0 &amp; -2 &amp; -10 &amp; -15 \\
+            0 &amp; 0 &amp; 5 &amp; 7 \\
+            0 &amp; 2 &amp; 15 &amp; 18  
+            \end{pmatrix}
+            \begin{array}{c} f_4=f_4+f_2  \end{array} \Longrightarrow
+            \begin{pmatrix}
+            1 &amp; 2 &amp; 5 &amp; 6 \\
+            0 &amp; -2 &amp; -10 &amp; -15 \\
+            0 &amp; 0 &amp; 5 &amp; 7 \\
+            0 &amp; 0 &amp; 5 &amp; 3 
+            \end{pmatrix}
+          </me>
+          
+          <me>
+            \begin{pmatrix}
+            1 &amp; 2 &amp; 5 &amp; 6 \\
+            0 &amp; -2 &amp; -10 &amp; -15 \\
+            0 &amp; 0 &amp; 5 &amp; 7 \\
+            0 &amp; 0 &amp; 5 &amp; 3 
+            \end{pmatrix}
+            \begin{array}{c} f_4=f_4-f_3  \end{array} \Longrightarrow
+            \begin{pmatrix}
+            1 &amp; 2 &amp; 5 &amp; 6 \\
+            0 &amp; -2 &amp; -10 &amp; -15 \\
+            0 &amp; 0 &amp; 5 &amp; 7 \\
+            0 &amp; 0 &amp; 0 &amp; -4  
+            \end{pmatrix}
+          </me>
+        </p>
+        
+        <p>
+          Nos quedan cuatro filas, por lo tanto, el rango es 4.
+        </p>
+      </solution>
+    </example>
+  </subsection>
+  
+  <subsection xml:id="rango_matriz_determinantes">
+    <title>Calculo del rango de una matriz por determinantes</title>
+    
+    <p>
+      Se llama menor de orden <m>k</m> de una matriz <m>A</m>, de cualquier dimensión, al determinante de la matriz formada por elementos que perteneces a <m>k</m> filas y <m>k</m> columnas de la matriz A.
+    </p>
+    
+    <example>
+      <statement>
+        <p>
+          Hallar un menor de orden 2 y otro de orden 3 de la matriz: 
+          <m>A=
+            \begin{pmatrix}
+            1 &amp; 0 &amp; 2 &amp; -3 \\
+            3 &amp; 3 &amp; 1 &amp; 2 \\
+            0 &amp; -1 &amp; 2 &amp; -3
+            \end{pmatrix}
+          </m>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Para hallar un menor de orden 2 de esta matriz elegimos dos filas y dos columnas de dicha matriz. Por ejemplo, elegimos la fila 2 y la fila 3 y la columna 1 y la columna 4 y obtenemos:
+        </p>
+        
+        <p>
+          <m>
+            \begin{vmatrix}
+            3 &amp; 2 \\
+            0 &amp; -3
+            \end{vmatrix}= -9
+          </m>
+        </p>
+        
+        <p>
+          Para hallar un menor de orden 3 cogemos tres filas, por ejemplo, las filas 1, 2 y 3 y tres columnas, por ejemplo las columnas 1,2 y 4. De esta manera obtenemso:
+        </p>
+        
+        <p>
+          <m>
+            \begin{vmatrix}
+            1 &amp; 0 &amp; -3 \\
+            3 &amp; 3 &amp; 2 \\
+            0 &amp; -1 &amp; -3
+            \end{vmatrix}= 2
+          </m>
+        </p>
+      </solution>
+    </example>
+    <assemblage>
+      <p>
+        El rango de una matriz es el orden del mayor menor no nulo de la matriz.
+      </p>
+    </assemblage>
+    <p>
+      Para calcular el rango de una matriz mediante determinantes procederemos de la siguiente forma:
+    </p>
+    
+    <p>
+      <ul>
+        <li>
+          <p>
+            Si la matriz <m>A</m> es la matriz nula el rango será 0. En caso contrario buscamos un menor de orden 2 que sea distinto de cero. Si no hay ninguno el rango será 1.
+          </p>
+        </li>
+        
+        <li>
+          <p>
+            Si hay algún menor de orden 2 distinto de cero el rango será mayor o igual a 2. En este caso orlamos el menor de orden 2 distinto de cero añadiendole otra fila y otra columna utilizando todas las posibilidades. Si todos son cero el rango será 2 en caso contrario el rango será mayor o igual que 3 y se sigue orlando el menor de orden 3 distinto de cero si esto es posible, es decir, si hay filas y columnas para añadirle.
+          </p>
+        </li>
+        
+      </ul>
+    </p>
+    
+    <p>
+      El rango de la matriz será el orden del mayor menor no nulo.
+    </p>
+    
+    <example xml:id="exa_rang_dete1">
+      <statement>
+        <p>
+          Hallar el rango de la matriz 
+          <m>A=
+            \begin{pmatrix}
+            -1 &amp; 0 &amp; 0 &amp; 2 &amp; -2 \\
+            3 &amp; 1 &amp; -1 &amp; 4 &amp; 0 \\
+            2 &amp; 1 &amp; -1 &amp; 6 &amp; -2 
+            \end{pmatrix}
+          </m>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Buscamos un menor de orden 2 no nulo. Para ello tomamos la primera y la segunda fila y la primera y la segunda columna.
+        </p>
+        <p>
+          <m>\begin{vmatrix}
+            -1 &amp; 0 \\ 3 &amp; 1
+            \end{vmatrix}=-1 \neq 0 \Rightarrow \text{ran}(A) \geq 2
+          </m>
+        </p>
+        
+        <p>
+          Orlamos este menor añadiéndole otra fila y otra columna hasta encontrar un menor de orden 3 distinto de cero si lo hay.
+        </p>
+        
+        <p>
+          <m>
+            \begin{vmatrix}
+            -1 &amp; 0 &amp; 0 \\
+            3 &amp; 1 &amp; -1 \\
+            2 &amp; 1 &amp; -1 
+            \end{vmatrix}=0 \qquad  
+            \begin{vmatrix}
+            -1 &amp; 0 &amp; 2 \\
+            3 &amp; 1 &amp; 4 \\
+            2 &amp; 1 &amp; 6
+            \end{vmatrix}=0 \qquad  
+            \begin{vmatrix}
+            -1 &amp; 0 &amp; -2 \\
+            3 &amp; 1 &amp; 0 \\
+            2 &amp; 1 &amp; -2
+            \end{vmatrix}=0
+          </m>
+        </p>
+        
+        <p>
+          Por lo tanto, el rango de la matriz es <m>2</m>.
+        </p>
+      </solution>
+    </example>
+        
+  </subsection>
+</section>

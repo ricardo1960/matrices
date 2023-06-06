@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+<section xml:id="sec_matriz_traspuesta" >
+  
+  <title>Matriz traspuesta.</title>
+  <introduction>
+    <assemblage>
+      <title>Matriz traspuesta</title>
+      <p>
+        La matriz traspuesta de uma matriz <m>A</m> de dimensión <m>m \times n</m> es la matriz que resulta de intercambiar las filas por las columnas o las columnas por las filas. Se denomina por <m>A^t</m> y su dimensión es <m>n \times m</m>.
+      </p>
+    </assemblage>
+    
+    <example xml:id="exa_tras1">
+      Hallar la matriz traspuesta de la matriz <m>A= \begin{pmatrix} 1 \amp 2 \\ -1 \amp 0 \\ -2 \amp 3 \end{pmatrix} </m>
+      <solution>
+        <m>A^t = \begin{pmatrix} 1 \amp -1 \amp -2 \\ 2 \amp 0 \amp 3 \end{pmatrix}</m>
+      </solution>
+    </example>
+  </introduction>
+  <subsection xml:id="matriz_simetrica_y_antisimetrica" >
+    <title>Matriz simétrica y antisimétrica</title>
+    <assemblage>
+      <p> 
+        Una matriz cuadrada,<m>A</m>, es <emp>simétrica</emp> si coincide con su traspuesta.
+        <me>A=A^t \rightarrow a_{ij}=a_{ji}</me>
+      </p>
+      <p>
+        Una matriz,<m>A</m>, es <emp>antisimétrica</emp> cuando su opuesta coincide con su traspuesta.
+        <me>-A=A^t \rightarrow -a_{ij}=a_{ji}</me>
+      </p>
+    </assemblage>
+  </subsection>
+</section>
