@@ -1,3 +1,3 @@
-# My Great Book
+# Matrices
 
-Visit <https://pretextbook.org/documentation.html> to learn more.
+Apuntes de matrices para las clases de Matemáticas II del IVED-UHEI.
