@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<exercises xml:id="ex_matrices" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="matrices" xmlns:xi="http://www.w3.org/2001/XInclude">
   <!-- You can ommit the title and just get the default "Exercises" -->
+	<title>Ejercicios y problemas</title>
+	
 	
 	
 	<exercise>
@@ -239,7 +241,176 @@
 					</li>
 				</ol>
 			</p>
-</answer>
-</exercise>
+    </answer>
+  </exercise>
 
-</exercises>
+  <exercise>
+    <statement>
+      <p>
+        Dadas las matrices:
+      </p>
+      <me>
+        A=\begin{pmatrix} m &amp; 4 &amp; 4 \\ 0 &amp; 2 &amp; 4 \\ 0 &amp; 0 &amp; 1 \end{pmatrix} \qquad B= \begin{pmatrix} 1 &amp; -1 &amp; 2 \\ 1 &amp; 0 &amp; 1 \end{pmatrix} \qquad C= \begin{pmatrix} 0 &amp; 1 &amp; 1 \\ 1 &amp; 2 &amp; -1 \end{pmatrix}
+      </me>
+      <p>
+        <ol label="a)">
+          <li>
+            <p>
+              Determine para que valores de <m>m</m> la matriz <m>A</m> tiene inversa.
+            </p>
+          </li>
+          <li>
+            <p>
+              Despeje la matriz <m>X</m> tal que <m>X \cdot A+B= C</m> y calcúlela para <m>m=1</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <answer>
+      <p>
+        <ol label="a)">
+          <li>
+            <p>
+              <m>m \neq 0</m>
+            </p>  
+          </li>
+          <li>
+            <p>
+              <m>X= \begin{pmatrix} -1 &amp; 3 &amp; -9 \\ 0 &amp; 1 &amp; -6 \end{pmatrix}</m>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </answer>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        Sabiendo que <m>\begin{vmatrix} 1 &amp; 1 &amp; 1 \\ x &amp; y &amp; z \\ 0 &amp; 2 &amp; 4 \end{vmatrix}</m>, calcular, sin desarrollar ni utilizar la regla de Sarrus, los siguientes determinantes, indicando en cada paso qué propiedad de los determinantes estás utilizando:
+      </p>
+      <p>
+        <ol label="a)">
+          <li>
+            <p>
+              <m>
+                \begin{vmatrix} 3x &amp; 3y &amp; 3z \\ 1 &amp; 1 &amp; 1 \\ 0 &amp; 1 &amp; 2 \end{vmatrix}
+              </m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>
+                \begin{vmatrix} x &amp; y &amp; z \\ 3x &amp; 3y+2 &amp; 3z+4 \\ x+2 &amp; y+2 &amp; z+2 \end{vmatrix}
+              </m>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <answer>
+      <p>
+        <ol label="a)">
+          <li>
+            <p>
+              <m>-6</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>8</m>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </answer>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        Si la matriz <m>\begin{pmatrix} a &amp; b &amp; c \\ d &amp; e &amp; f \\ g &amp; h &amp; i \end{pmatrix} </m>, tiene dsu determinante igual a <m>n</m>, averigua, sin desarrollar ni utilizar la regla de Sarrus, el valor del determinante de las siguientes matrices:
+      </p>
+      <p>
+        <ol label="a)">
+          <li>
+            <p>
+              <m>
+                B=\begin{pmatrix} 6d &amp; 4e &amp; 2f \\ 3g &amp; 2h &amp; i \\ 9a &amp; 6b &amp; 3c \end{pmatrix}
+              </m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>
+                C=\begin{pmatrix} d+f &amp; e &amp; f+e \\ a+c &amp; b &amp; c+b \\ g+i &amp; h &amp; i+h \end{pmatrix}
+              </m>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <answer>
+      <p>
+        <ol label="a)">
+          <li>
+            <p>
+              <m>|B|=36n </m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>|C|= -n </m>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </answer>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        Discutir, en función del número real <m>m</m>, el rango de la matriz:
+      </p>
+      <me>
+        A=\begin{pmatrix} 2 &amp; 1 &amp; m \\ 1+m &amp; 2 &amp; 3 \\ -2 &amp; -1 &amp; 2 \end{pmatrix}
+      </me>
+    </statement>
+    <answer>
+      <p>
+        <m>\begin{cases} m \in \R-\{-2,3\} \rightarrow \text{Rango}(A)=3 \\ m=-2 \rightarrow \text{Rango}(A)=2 \\ m=3 \rightarrow \text{Rango}(A)=2 \end{cases} </m>
+      </p>
+    </answer>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        Discutir, en función del número real <m>a</m>, el rango de la matriz:
+      </p>
+      <me>
+        A=\begin{pmatrix} 1 &amp; 2 &amp; 1 \\ 2 &amp; 1 &amp; 3 \\ 0 &amp; 1 &amp; a \end{pmatrix}
+      </me>
+    </statement>
+    <answer>
+      <p>
+        <m>\begin{cases} a \neq -\frac{1}{3} \rightarrow \text{Rango}(A)=3 \\ a= -\frac{1}{3} \rightarrow \text{Rango}(A)=2  \end{cases} </m>
+      </p>
+    </answer>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        Dadas las matrices <m>A=\begin{pmatrix} 1 &amp; 0 &amp; 0 \\ 1 &amp; 0 &amp; 0 \\ 1 &amp; 0 &amp; 0 \end{pmatrix}</m> y <m>C=\begin{pmatrix} 1 &amp; 0 &amp; 0 \\ 2 &amp; 1 &amp; 0 \\ 3 &amp; 2 &amp; 2 \end{pmatrix}</m>, hallense las matrices <m>X</m> que satisfacen <m>X \cdot C +A = C + A^2</m>
+      </p>
+    </statement>
+    <answer>
+      <p>
+        <m>X=\begin{pmatrix} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{pmatrix}</m>
+      </p>
+    </answer>
+  </exercise>
+</section>

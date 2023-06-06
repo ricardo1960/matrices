@@ -20,11 +20,8 @@
 		</p>
 	</introduction>
     
-        <xi:include href="ejercicios/ex_matrices-resueltos.ptx" />
-    
-<section xml:id="ejercicios">
-    <title>Ejercicios</title>
-	<xi:include href="ejercicios/ex_matrices.ptx" />
-</section>
+    <xi:include href="ejercicios/ex_matrices-resueltos.ptx" />
+    <xi:include href="ejercicios/ex_matrices.ptx" />
+
   </article>
 </pretext>
